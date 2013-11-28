@@ -6,8 +6,17 @@
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link href="default.css" rel="stylesheet" type="text/css" media="screen" />
-        <!--<link href="assets/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />-->
+        <link href="assets/grid.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="assets/facebook.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="assets/ui-buttons.css" rel="stylesheet" type="text/css" media="screen" />
         <link rel="stylesheet" href="dropdown/dropdown_1.css" type="text/css" />
+        <style type="text/css">
+            .myOtherTable { background-color:#FFFFE0;border-collapse:collapse;color:#000;font-size:18px; }
+            .myOtherTable th { background-color:#C28C21;color:white;width:50%; }
+            .myOtherTable td, .myOtherTable th { padding:5px;border:0; }
+            .myOtherTable td { border-bottom:1px dotted #C28C21; }
+            .myOtherTable a{padding:0px; background:#FFFFE; color:black}
+        </style>
         <script type="text/javascript" src="dropdown/dropdown_1.js"></script>
     </head>
     <body>
@@ -85,48 +94,3 @@
 
                 </ul>
             </div>
-        </div>
-
-        <!--  1st drop down menu-->
-        <!-- <div id = "dropMenu1" class = "dropmenudiv">
-          <a href="#"><span>Fashion</span></a>
-         <a href="#"><span>Electronic</span></a>
-         <a href="#"><span>Properti</span></a>
-         <a href="#"><span>Garage Sale</span></a>
-         </div>
-
-
-        <!--        2nd drop down menu-->
-        <!-- <div id = "dropMenu2" class = "dropmenudiv" style = "width: 100px;">
-         <a href="#"><span>Foto</span></a>
-         <a href="#"><span>Video</span></a>
-
-         </div>
-
-        <!--        3nd drop down menu-->
-        <!--  <div id = "dropMenu3" class = "dropmenudiv" style = "width: 100px;">
-          <a target="_blank" href=http://www.facebook.com><span><img border="0" src="images/facebook.jpg" width="30" height="30" alt="" title=""></span></a>
-          <a target="_blank" href=http://www.twitter.com><span><img border="0" src="images/twitter.jpg" width="30" height="30" alt="" title=""></span></a>
-          <a target="_blank" href=http://www.blogspot.com><span><img border="0" src="images/blog.jpg" width="30" height="30" alt="" title=""></span></a>
-          <a target="_blank" href=http://www.google.com/talk/><span><img border="0" src="images/gtalk.gif" width="30" height="30" alt="" title=""></span></a>
-          </div>
-
-   <script type = "text/javascript">
-
-          cssdropdown.startchrome("chromemenu")
-
-          </script>
-
-                  </td>
-          </tr>
-
-
-                           </body>
-
-                           </html>-->
-        <?php
-        /*
-         * To change this template, choose Tools | Templates
-         * and open the template in the editor.
-         */
-        ?>

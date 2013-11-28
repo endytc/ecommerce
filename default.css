@@ -367,3 +367,18 @@ img { border: none; }
 #footer a {
 	color: #C28C21;
 }
+div.baju div div{
+    /*text-align: left;*/
+}
+div.baju div.grid_3{
+        color: #333;
+	background:#fff9d7;
+	border: 1px solid #e2c822;
+        height: 300px;
+        text-align: center;
+}
+img.katalog{
+   width: 190px;
+   height: 230px;
+   
+}
