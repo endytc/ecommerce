@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Natures Charm
+Description: A two-column, fixed-width design.
+Version    : 1.0
+Released   : 20080125
+
+-->
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Website E-commerce</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link href="default.css" rel="stylesheet" type="text/css" media="screen" />
+        <script type="text/javascript" src="slide/jquery-1.2.6.min.js"></script>
+         <link rel="stylesheet" href="dropdown/dropdown_1.css" type="text/css" />
+        <script type="text/javascript" src="dropdown/dropdown_1.js"></script>
+        <script type="text/javascript">
+
+            /***
+    Simple jQuery Slideshow Script
+    Released by Jon Raasch (jonraasch.com) under FreeBSD license: free to use or modify, not responsible for anything, etc.  Please link out to me if you like it :)
+             ***/
+
+            function slideSwitch() {
+                var $active = $('#slideshow IMG.active');
+
+                if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+
+                // use this to pull the images in the order they appear in the markup
+                var $next =  $active.next().length ? $active.next()
+                : $('#slideshow IMG:first');
+
+                $active.addClass('last-active');
+
+                $next.css({opacity: 0.0})
+                .addClass('active')
+                .animate({opacity: 1.0}, 1000, function() {
+                    $active.removeClass('active last-active');
+                });
+            }
+
+            $(function() {
+                setInterval( "slideSwitch()", 5000 );
+            });
+
+        </script>
+
+    </head>
+    <body>
+        <!-- start header -->
+        <div id="header">
+            <div class="login-holder">
+                <form name="login" enctype="" action="salam.php" method="post">
+                    <label class="email-holder">
+                        <input name="email" placeholder="Email" type="text">
+                    </label>
+                    <input name="password" placeholder="Password" type="password">
+                        <!-- <div class="login ">-->
+                        <input value="Login" type="submit">
+                            <!--</div>-->
+                            </form>
+                            <div class="options">
+                                <a href="FormMember.php">Daftar Member</a>||<a href="" target="_blank">Lupa Password</a>
+                            </div>
+                            </div>
+                            <div id="logo">
+                                <h1><a href="#">E-COMMERCE PENJUALAN PRODUK </a></h1>
+                                <div id="flags-holder">
+                                </div>
+                            </div>
+                            <div class="search-holder">
+                                <input type="text" /> <button>Search</button>
+                            </div>
+                            <div id="menu">
+                                <ul>
+                                    <li class=""><a href="index.html" accesskey="1" title="">Home</a></li>
+                                    <li>
+                                        <!--                        <a href="#" rel="dropMenu1"accesskey="2" title="">Produk</a>-->
+                                        <dl class="dropdown">
+                                            <dt id="one-ddheader" onmouseover="ddMenu('one',1)" onmouseout="ddMenu('one',-1)"><a href="#" rel="dropMenu1"accesskey="2" title="">Product</a></dt>
+                                            <dd id="one-ddcontent" onmouseover="cancelHide('one')" onmouseout="ddMenu('one',-1)">
+                                                <ul>
+                                                    <li><a href="HalamanFashion.php" class="underline">Fashion</a></li>
+                                                    <li><a href="HalamanElektronik.php" class="underline">Electronic</a></li>
+                                                    <li><a href="HalamanProperti.php" class="underline">Properti</a></li>
+                                                    <li><a href="#" class="underline">Garage Sale</a></li>
+
+                                                </ul>
+                                            </dd>
+                                        </dl>
+
+                                    </li>
+                                    <li>
+                                        <dl class="dropdown">
+                                            <dt id="two-ddheader" onmouseover="ddMenu('two',1)" onmouseout="ddMenu('two',-1)"><a href="#" rel="dropMenu2"accesskey="3" title="">Shop</a></dt>
+                                            <dd id="two-ddcontent" onmouseover="cancelHide('two')" onmouseout="ddMenu('two',-1)">
+                                                <ul>
+                                                    <li><a href="HalamanBuy.php"" class="underline">Buy</a></li>
+                                                    <li><a href="#" class="underline">Chart</a></li>
+                                                    <li><a href="#" class="underline">Best Seller</a></li>
+                                                    <li><a href="#" class="underline">New Arrival</a></li>
+
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li><a href="#" accesskey="4" title="">About</a></li>
+                                    <li>
+                                        <dl class="dropdown">
+                                        <dt id="three-ddheader" onmouseover="ddMenu('three',1)" onmouseout="ddMenu('three',-1)"><a href="#" rel="dropMenu3"accesskey="5" title="">Contact</a></dt>
+                                        <dd id="three-ddcontent" onmouseover="cancelHide('three')" onmouseout="ddMenu('three',-1)">
+                                        <ul>
+                                        <li><a target="_blank" href=http://www.facebook.com><span><img border="0" src="images/facebook.jpg" width="30" height="30" alt="" title=""></span></a></li>
+                                        <li><a target="_blank" href=http://www.twitter.com><span><img border="0" src="images/twitter.jpg" width="30" height="30" alt="" title=""></span></a></li>
+                                        <li><a target="_blank" href=http://www.blogspot.com><span><img border="0" src="images/blog.jpg" width="30" height="30" alt="" title=""></span></a></li>
+                                        <li><a target="_blank" href=http://www.google.com/talk/><span><img border="0" src="images/gtalk.gif" width="30" height="30" alt="" title=""></span></a></li>
+                                </ul>
+                            </div>
+                            </div>
+                            <!-- end header -->
+                            <div id="gallery">
+                                <div id="slideshow">
+                                    <img src="images/ootd1.jpg" alt="Slideshow Image 1" class="active" width="830" height="300"/>
+                                    <img src="images/ootd2.jpg" alt="Slideshow Image 2" width="830" height="300" />
+                                    <img src="images/men2.jpg" alt="Slideshow Image 3" width="830" height="300" />
+                                    <img src="images/men1.jpg" alt="Slideshow Image 4" width="830" height="300" />
+                                    <img src="images/polaroid1.jpg" alt="Slideshow Image 4" width="830" height="300" />
+                                    <img src="images/polaroid2.jpg" alt="Slideshow Image 4" width="830" height="300" />
+                                    <img src="images/house1.jpg" alt="Slideshow Image 4" width="830" height="300" />
+                                    <img src="images/house2.jpg" alt="Slideshow Image 4" width="830" height="300" />
+                                </div>
+                                <!-- <div id="top-photo">
+                                     <p><a href="#"><img src="../slide/slide.php" alt="" width="830" height="300" /></a></p>
+                                 </div>-->
+                            </div>
+
+
+
+
+                            <!-- start page -->
+                            <div id="page">
+                                <!-- start content -->
+                                <div id="content">
+                                    <div class="post">
+                                        <h1 class="title">Welcome to My Website</h1>
+                                        <p class="byline"><small>Posted on August 25th, 2007 by <a href="#">admin</a> | <a href="#">Edit</a></small></p>
+                                        <div class="entry">
+                                            <p><strong>Nature's Charm</strong> is a free template from <a href="http://freecsstemplates.org/">Free CSS Templates</a> released under a <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>. The flower photo is fromt <a href="http://www.pdphoto.org/">PDPhoto.org</a>. You're free to use this template for both commercial or personal use. I only ask that you link back to <a href="http://freecsstemplates.org/">my site</a> in some way. Enjoy :)</p>
+                                        </div>
+                                        <p class="meta"><a href="#" class="more">Read More</a> &nbsp;&nbsp;&nbsp; <a href="#" class="comments">Comments (33)</a></p>
+                                    </div>
+                                    <div class="post">
+                                        <h2 class="title">Risus Pellentesque Pharetra</h2>
+                                        <p class="byline"><small>Posted on August 25th, 2007 by <a href="#">admin</a> | <a href="#">Edit</a></small></p>
+                                        <div class="entry">
+                                            <blockquote>
+                                                <p>&#8220;Praesent augue mauris, accumsan eget, ornare quis, consequat malesuada, leo.&#8221;</p>
+                                            </blockquote>
+                                            <p>Maecenas pede nisl, elementum eu, ornare ac, malesuada at, erat. Proin gravida orci porttitor enim accumsan lacinia. Donec condimentum, urna non molestie semper, ligula enim ornare nibh, quis laoreet eros quam eget ante.</p>
+                                        </div>
+                                        <p class="meta"><a href="#" class="more">Read More</a> &nbsp;&nbsp;&nbsp; <a href="#" class="comments">Comments (33)</a></p>
+                                    </div>
+                                </div>
+                                <!-- end content -->
+                                <!-- start sidebar -->
+                                <div id="sidebar">
+                                    <ul>
+                                        <li>
+                                            <h2>Categories</h2>
+                                            <ul>
+                                                <li><a href="HalamanFashion.php">Fashion</a></li>
+                                                <li><a href="#">Electronic</a></li>
+                                                <li><a href="#">Product Home</a></li>
+                                                <li><a href="#">Garage Sale</a></li>
+                                                <!---<li><a href="#">Proin gravida orci porttitor</a></li>-->
+                                            </ul>
+
+                                        </li>
+
+                                        <li id="calendar">
+                                            <h2>Calendar</h2>
+                                            <div id="calendar_wrap">
+                                                <table id="wp-calendar" summary="Calendar">
+                                                    <caption>
+						November 2013
+                                                    </caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th abbr="Monday" scope="col" title="Monday">M</th>
+                                                            <th abbr="Tuesday" scope="col" title="Tuesday">T</th>
+                                                            <th abbr="Wednesday" scope="col" title="Wednesday">W</th>
+                                                            <th abbr="Thursday" scope="col" title="Thursday">T</th>
+                                                            <th abbr="Friday" scope="col" title="Friday">F</th>
+                                                            <th abbr="Saturday" scope="col" title="Saturday">S</th>
+                                                            <th abbr="Sunday" scope="col" title="Sunday">S</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td abbr="Oktober" colspan="3" id="prev"><a href="#">&laquo; Okt</a></td>
+                                                            <td class="pad">&nbsp;</td>
+                                                            <td abbr="Desember" colspan="3" id="next" class="pad"><a href="#">Des &raquo;</a></td>
+                                                        </tr>
+                                                    </tfoot>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td colspan="2" class="pad">&nbsp;</td>
+                                                            <td>1</td>
+                                                            <td>2</td>
+                                                            <td>3</td>
+                                                            <td>4</td>
+                                                            <td>5</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>6</td>
+                                                            <td>7</td>
+                                                            <td>8</td>
+                                                            <td>9</td>
+                                                            <td>10</td>
+                                                            <td>11</td>
+                                                            <td>12</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>13</td>
+                                                            <td>14</td>
+                                                            <td>15</td>
+                                                            <td>16</td>
+                                                            <td>17</td>
+                                                            <td>18</td>
+                                                            <td>19</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>20</td>
+                                                            <td id="today">21</td>
+                                                            <td>22</td>
+                                                            <td>23</td>
+                                                            <td>24</td>
+                                                            <td>25</td>
+                                                            <td>26</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>27</td>
+                                                            <td>28</td>
+                                                            <td>29</td>
+                                                            <td>30</td>
+                                                            <td>31</td>
+                                                            <td class="pad" colspan="2">&nbsp;</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </li>
+
+
+                                        <!--<li>
+				<h2>Archives</h2>
+				<ul>
+					<li><a href="#">September</a> (23)</li>
+					<li><a href="#">August</a> (31)</li>
+					<li><a href="#">July</a> (31)</li>
+					<li><a href="#">June</a> (30)</li>
+					<li><a href="#">May</a> (31)</li>
+					<li><a href="#">April</a> (30)</li>
+					<li><a href="#">March</a> (31)</li>
+					<li><a href="#">February</a> (28)</li>
+					<li><a href="#">January</a> (31)</li>
+				</ul>
+			</li>-->
+                                    </ul>
+                                </div>
+                                <!-- end sidebar -->
+                            </div>
+                            <div style="clear: both; height: 30px">&nbsp;</div>
+                            <!-- end page -->
+                            <div id="footer">
+                                <p>&copy;2007 All Rights Reserved. &nbsp;&bull;&nbsp; Designed by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a></p>
+                            </div>
+                            <div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div></body>
+                            </html>
