@@ -557,4 +557,8 @@ function getPDOInstance(){
                 $dbProfile['dbname']);
     return new PDO($connectionString, $dbProfile['user'], $dbProfile['password']);
 }
+function getFileFormat($file){
+    $data=  explode('.', $file);
+    return $data[count($data)-1];
+}
 ?>

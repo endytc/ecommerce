@@ -8,7 +8,7 @@
         <tr>
         <td>
             <li><a href="<? echo app_base_url('pageadmin/produk/add')?>">Tambah</a> </li>
-            <li> <a href="<? echo app_base_url('pageadmin/index')?>">List</a> </li>
+            <li> <a href="<? echo app_base_url('pageadmin/produk/index')?>">List</a> </li>
         </td>
         </tr>
     </table>

@@ -55,7 +55,6 @@
                 </table>
                 <?php echo $pagging ?>
             </div>
-            <p class="meta"><a href="#" class="more">Read More</a> &nbsp;&nbsp;&nbsp; <a href="#" class="comments">Comments (33)</a></p>
         </div>
     </div>
 </div>

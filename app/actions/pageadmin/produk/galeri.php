@@ -34,7 +34,13 @@
                 <td>
                     <?php 
                     if($data['format']=='video'):
-                        echo "$data[file]";
+//                        echo app_base_url()."/$data[file]";
+                        ?>
+                    <embed src="<?php echo app_base_url()."/$data[file]";?>" height="">
+                    <video width="320" height="240" controls>
+                        <source src="<?php echo app_base_url()."/$data[file]"?>" type="<?php echo ($data['type'])?>">
+                    </video>
+                        <?php
                     else:
                         echo '<img src="'.$b64Src.'" alt="" width="100px"/>';
                     endif;?>
@@ -51,7 +57,6 @@
                 </table>
                 <?php echo $pagging ?>
             </div>
-            <p class="meta"><a href="#" class="more">Read More</a> &nbsp;&nbsp;&nbsp; <a href="#" class="comments">Comments (33)</a></p>
         </div>
     </div>
 </div>
