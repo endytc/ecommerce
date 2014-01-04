@@ -2,7 +2,7 @@
     $page=  array_value($_GET, 'pages',1)*  getPerPage()-  getPerPage();
     $produk=  _select_unique_result("select * from produk where idProduk=$_GET[id]");
     $galeri_produk=  _select_arr("select * from galeri_produk p
-     
+        where idProduk=$_GET[id]
         limit $page,".  getPerPage());
     $pagging= pagination("select * from galeri_produk", getPerPage());
 ?>
@@ -34,12 +34,9 @@
                 <td>
                     <?php 
                     if($data['format']=='video'):
-//                        echo app_base_url()."/$data[file]";
                         ?>
-                    <embed src="<?php echo app_base_url()."/$data[file]";?>" height="">
-                    <video width="320" height="240" controls>
-                        <source src="<?php echo app_base_url()."/$data[file]"?>" type="<?php echo ($data['type'])?>">
-                    </video>
+                    <embed src="<?php echo app_base_url()."/$data[file]"?>" width="300" height="200" autostart="false">
+                    <p style="font-size: 10px">If you cannot see this, your computer doesn't support the format</p>
                         <?php
                     else:
                         echo '<img src="'.$b64Src.'" alt="" width="100px"/>';
