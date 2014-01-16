@@ -26,20 +26,23 @@
         <?php
         $i = $page + 1;
         foreach ($galeri_produk as $data) {
-            $b64Src = "data:".$data['type'].";base64," . base64_encode($data["file"]);
-
             ?>
             <tr>
                 <td><?php echo $i++;?></td>
-                <td colspan="2">
+                
                     <?php 
                     if($data['format']=='video'):
+                        ?><td colspan="2"><?
                         play_video($data['file'], $data['keterangan'],$data['idGaleri']);
+                        ?><td><?
                     else:
-                        echo '<img src="'.$b64Src.'" alt="" width="100px"/>';
+                        $b64Src = "data:".$data['type'].";base64," . base64_encode($data["file"]);
+                        ?><td><?echo '<img src="'.$b64Src.'" alt="" width="100px"/>';?></td><?
+                        ?><td><?echo $data['keterangan'];?></td><?
+                        
                     endif;?>
-                </td>
-                <!--<td><?php echo $data['keterangan'] ?></td>-->
+                
+                
                 <td class="button">
                     <a href="<?php echo app_base_url("pageadmin/produk/galeri_delete?idGaleri=$data[idGaleri]&id=$_GET[id]") ?>" onclick="return window.confirm('<?php echo "Apakah anda yakin akan menghapus galeri_produk $data[nama]?" ?>')"class="hapus">hapus</a>
                 </td>
