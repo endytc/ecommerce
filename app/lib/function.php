@@ -561,4 +561,85 @@ function getFileFormat($file){
     $data=  explode('.', $file);
     return $data[count($data)-1];
 }
+function play_video($urlVideo,$title,$id=null,$isLarge=false){
+    if($id==null)
+        $id=  "video".rand(-9999999999999999999999999, 0);
+    else {
+        $id.="-video";
+    }
+                        ?>
+                    <script type="text/javascript">
+                    $(document).ready(function(){
+                        $("#jquery_jplayer_<?php echo $id?>").jPlayer({
+                                        ready: function () {
+                                                $(this).jPlayer("setMedia", {
+                                                        m4v: "<?php echo app_base_url()."/$urlVideo"?>",
+                                                        ogv: "<?php echo app_base_url()."/$urlVideo"?>",
+                                                        webmv: "<?php echo app_base_url()."/$urlVideo"?>",
+                                                        poster: "<?php echo app_base_url()."/$urlVideo"?>"
+                                                });
+                                        },
+                                        swfPath: "<?php echo app_base_url().'/assets/jplayer.js/'?>/Jplayer.swf",        
+//                                        swfPath: "js",
+                                        solution: "flash, html",
+                                        supplied: "webmv, ogv, m4v",
+                                        size: {
+                                                cssClass: "jp-video-270p"
+                                        },
+                                        smoothPlayBar: true,
+                                        keyEnabled: true
+                                });
+                        });
+
+                    </script>
+                    <div id="jp_container_1" class="jp-video">
+                    <div class="jp-type-single">
+				<div id="jquery_jplayer_<?php echo $id?>" class="jp-jplayer"></div>
+				<div class="jp-gui">
+					<div class="jp-video-play">
+						<a href="javascript:;" class="jp-video-play-icon" tabindex="1">play</a>
+					</div>
+					<div class="jp-interface">
+						<div class="jp-progress">
+							<div class="jp-seek-bar">
+								<div class="jp-play-bar"></div>
+							</div>
+						</div>
+						<div class="jp-current-time"></div>
+						<div class="jp-duration"></div>
+						<div class="jp-title">
+							<ul>
+								<li><?php echo $title?></li>
+							</ul>
+						</div>
+						<div class="jp-controls-holder">
+							<ul class="jp-controls">
+								<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+								<li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+								<li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+								<li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+								<li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+								<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+							</ul>
+							<div class="jp-volume-bar">
+								<div class="jp-volume-bar-value"></div>
+							</div>
+
+							<ul class="jp-toggles">
+								<li><a href="javascript:;" class="jp-full-screen" tabindex="1" title="full screen">full screen</a></li>
+								<li><a href="javascript:;" class="jp-restore-screen" tabindex="1" title="restore screen">restore screen</a></li>
+								<li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+								<li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="jp-no-solution">
+					<span>Update Required</span>
+					To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+				</div>
+			</div>
+			</div>
+                    <?
+}
 ?>

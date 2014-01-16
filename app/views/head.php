@@ -4,7 +4,9 @@
         <meta name="description" content="" />
         <link href="<?php echo app_base_url().'/assets/'?>default.css" rel="stylesheet" type="text/css" media="screen" />
         <script type="text/javascript" src="<?php echo app_base_url().'/assets/'?>slide/jquery-1.2.6.min.js"></script>
+        <script type="text/javascript" src="<?php echo app_base_url().'/assets/jplayer.js/'?>jquery.jplayer.js"></script>
         <link rel="stylesheet" href="<?php echo app_base_url().'/assets/'?>dropdown/dropdown_1.css" type="text/css" />
+        <link rel="stylesheet" href="<?php echo app_base_url().'/assets/'?>jplayer.skin/pink.flag/jplayer.pink.flag.css" type="text/css" />
         <script type="text/javascript" src="<?php echo app_base_url().'/assets/'?>dropdown/dropdown_1.js"></script>
         <script type="text/javascript">
 

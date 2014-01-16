@@ -31,18 +31,17 @@
             ?>
             <tr>
                 <td><?php echo $i++;?></td>
-                <td>
+                <td colspan="2">
                     <?php 
                     if($data['format']=='video'):
+                        play_video($data['file'], $data['keterangan'],$data['idGaleri']);
                         ?>
-                    <embed src="<?php echo app_base_url()."/$data[file]"?>" width="300" height="200" autostart="false">
-                    <p style="font-size: 10px">If you cannot see this, your computer doesn't support the format</p>
                         <?php
                     else:
                         echo '<img src="'.$b64Src.'" alt="" width="100px"/>';
                     endif;?>
                 </td>
-                <td><?php echo $data['keterangan'] ?></td>
+                <!--<td><?php echo $data['keterangan'] ?></td>-->
                 <td class="button">
                     <a href="<?php echo app_base_url("pageadmin/produk/galeri_delete?idGaleri=$data[idGaleri]&id=$_GET[id]") ?>" onclick="return window.confirm('<?php echo "Apakah anda yakin akan menghapus galeri_produk $data[nama]?" ?>')"class="hapus">hapus</a>
                 </td>
