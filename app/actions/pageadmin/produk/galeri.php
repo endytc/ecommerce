@@ -35,8 +35,6 @@
                     <?php 
                     if($data['format']=='video'):
                         play_video($data['file'], $data['keterangan'],$data['idGaleri']);
-                        ?>
-                        <?php
                     else:
                         echo '<img src="'.$b64Src.'" alt="" width="100px"/>';
                     endif;?>
