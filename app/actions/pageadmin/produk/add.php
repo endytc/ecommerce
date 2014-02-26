@@ -3,13 +3,16 @@ if($_POST){
     $is_success=  _insert('produk', $_POST);
     if($is_success){
         $_SESSION['success']="Data produk berhasil ditambahkan";
+        $id=_select_max_id('produk',"idProduk");
+        redirect('pageadmin/produk/galeri?id='.$id);
     }else{
         $_SESSION['failed']="Data produk gagal ditambahkan";
+        redirect('pageadmin/produk/add');
     }
-    redirect('pageadmin/produk/galeri');
+
 }
 $kategoriList=  _select_arr("select * from kategori");
-$supplierList=  _select_arr("select * from supplier");
+$pemasokList=  _select_arr("select * from pemasok");
 ?>
 <?php require_once 'app/actions/pageadmin/produk/left_menu.php';?>
 <div id="page">
@@ -63,13 +66,13 @@ $supplierList=  _select_arr("select * from supplier");
                             </td>
                         </tr>
                         <tr>
-                            <td class="title">Supplier</td>
+                            <td class="title">Pemasok</td>
                             <td>
-                                <select name="idSupplier">
-                                    <option value="">- Pilih Supplier -</option>
+                                <select name="idPemasok">
+                                    <option value="">- Pilih Pemasok -</option>
                                     <?php
-                                    foreach ($supplierList as $key => $supplier) {
-                                        echo "<option value='$supplier[idSupplier]'>$supplier[namaSupplier]</value>";
+                                    foreach ($pemasokList as $key => $pemasok) {
+                                        echo "<option value='$pemasok[idPemasok]'>$pemasok[namaPemasok]</value>";
                                     }
                                     ?>
                                 </select>

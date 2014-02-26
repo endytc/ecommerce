@@ -3,11 +3,22 @@
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link href="<?php echo app_base_url().'/assets/'?>default.css" rel="stylesheet" type="text/css" media="screen" />
-        <script type="text/javascript" src="<?php echo app_base_url().'/assets/'?>slide/jquery-1.2.6.min.js"></script>
-        <script type="text/javascript" src="<?php echo app_base_url().'/assets/jplayer.js/'?>jquery.jplayer.js"></script>
+
         <link rel="stylesheet" href="<?php echo app_base_url().'/assets/'?>dropdown/dropdown_1.css" type="text/css" />
         <link rel="stylesheet" href="<?php echo app_base_url().'/assets/'?>jplayer.skin/pink.flag/jplayer.pink.flag.css" type="text/css" />
+        <link rel="stylesheet" href="<?php echo app_base_url().'/assets/'?>validate.css" type="text/css" />
+
+        <link href="assets/grid.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="assets/facebook.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="assets/ui-buttons.css" rel="stylesheet" type="text/css" media="screen" />
+
+<!--        <script type="text/javascript" src="--><?php //echo app_base_url().'/assets/'?><!--slide/jquery-1.2.6.min.js"></script>-->
+        <script type="text/javascript" src="<?php echo app_base_url().'/assets/'?>jquery-1.7.min.js"></script>
+        <script type="text/javascript" src="<?php echo app_base_url().'/assets/jplayer.js/'?>jquery.jplayer.js"></script>
+        <script type="text/javascript" src="<?php echo app_base_url().'/assets/jplayer.js/'?>jplayer.playlist.min.js"></script>
+        <script type="text/javascript" src="<?php echo app_base_url().'/assets/jplayer.js/'?>jquery.jplayer.inspector.js"></script>
         <script type="text/javascript" src="<?php echo app_base_url().'/assets/'?>dropdown/dropdown_1.js"></script>
+        <script type="text/javascript" src="<?php echo app_base_url().'/assets/'?>validate.js"></script>
         <script type="text/javascript">
 
             /***

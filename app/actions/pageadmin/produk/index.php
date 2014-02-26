@@ -1,7 +1,7 @@
 <?php
     $page=  array_value($_GET, 'pages',1)*  getPerPage()-  getPerPage();
     $produk=  _select_arr("select * from produk p
-        join supplier s on p.idSupplier=s.idSupplier
+        join pemasok s on p.idPemasok=s.idPemasok
         join kategori k on p.idKategori=k.idKategori
         limit $page,".  getPerPage());
     $pagging= pagination("select * from produk", getPerPage());
@@ -23,7 +23,7 @@
             <th>Warna</th>
             <th>Size</th>
             <th>Stok</th>
-            <th>Supplier</th>
+            <th>Pemasok</th>
             <th>Aksi</th>
         </tr>
     </thead>
@@ -41,7 +41,7 @@
                 <td><?php echo $data['warna'] ?></td>
                 <td><?php echo $data['size'] ?></td>
                 <td><?php echo $data['stok'] ?></td>
-                <td><?php echo $data['namaSupplier'] ?></td>
+                <td><?php echo $data['namaPemasok'] ?></td>
                 <td class="button">
                     <a href="<?php echo app_base_url("pageadmin/produk/galeri?id=$data[idProduk]") ?>" class="edit">galeri</a>
                     <a href="<?php echo app_base_url("pageadmin/produk/edit?id=$data[idProduk]") ?>" class="edit">edit</a>

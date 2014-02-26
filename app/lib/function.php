@@ -71,7 +71,7 @@ function datefmysql($tgl) {
 }
 function parse_datetime($datetime){
     $datetime=  explode(' ', $datetime);
-    return datefmysql($datetime[0]).' '.$datetime[1];
+    return datefmysql($datetime[0]).', '.$datetime[1];
 }
 function getBln($bln) {
     $sls = $_GET['thakhir'] - $_GET['thawal'];
@@ -270,6 +270,7 @@ function _select_arr($sql,$is_write_sql=false) {
     }
     return $result;
 }
+
 function _select_max_id($table,$column='id'){
     $a=  _select_unique_result("select max($column) as max from $table");
 //    echo "select max($column) as max from $table";
@@ -451,6 +452,7 @@ function get_user_login($id=null){
     if(is_admin()){
         $user= _select_unique_result("select * from admin where id='$id'");
     }else{
+        $user= _select_unique_result("select member.*,member.idMember as id from member where idMember='$id'");
     }
 //    show_array($user);
     return $user;
@@ -561,85 +563,188 @@ function getFileFormat($file){
     $data=  explode('.', $file);
     return $data[count($data)-1];
 }
+
 function play_video($urlVideo,$title,$id=null,$isLarge=false){
     if($id==null)
-        $id=  "video".rand(-9999999999999999999999999, 0);
+        $id=  "".rand(-9999999999999999999999999, 0);
     else {
-        $id.="-video";
+        $id.="";
     }
-                        ?>
-                    <script type="text/javascript">
-                    $(document).ready(function(){
-                        $("#jquery_jplayer_<?php echo $id?>").jPlayer({
-                                        ready: function () {
-                                                $(this).jPlayer("setMedia", {
-                                                        m4v: "<?php echo app_base_url()."/$urlVideo"?>",
-                                                        ogv: "<?php echo app_base_url()."/$urlVideo"?>",
-                                                        webmv: "<?php echo app_base_url()."/$urlVideo"?>",
-                                                        poster: "<?php echo app_base_url()."/$urlVideo"?>"
-                                                });
-                                        },
-                                        swfPath: "<?php echo app_base_url().'/assets/jplayer.js/'?>/Jplayer.swf",        
+    ?>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#jquery_jplayer_<?php echo $id?>").jPlayer({
+                ready: function () {
+                    $(this).jPlayer("setMedia", {
+                        m4v: "<?php echo app_base_url()."/$urlVideo"?>",
+                        ogv: "<?php echo app_base_url()."/$urlVideo"?>",
+                        webmv: "<?php echo app_base_url()."/$urlVideo"?>",
+                        poster: "<?php echo app_base_url()."/$urlVideo"?>"
+                    });
+                },
+                swfPath: "<?php echo app_base_url().'/assets/jplayer.js/'?>/Jplayer.swf",
 //                                        swfPath: "js",
-                                        solution: "flash, html",
-                                        supplied: "webmv, ogv, m4v",
-                                        size: {
-                                                cssClass: "jp-video-270p"
-                                        },
-                                        smoothPlayBar: true,
-                                        keyEnabled: true
-                                });
-                        });
+                solution: "flash, html",
+                supplied: "webmv, ogv, m4v",
+                size: {
+                    cssClass: "jp-video-270p"
+                },
+                smoothPlayBar: true,
+                keyEnabled: true,
+                cssSelectorAncestor: "#jp_container_<?php echo $id?>"
 
-                    </script>
-                    <div id="jp_container_1" class="jp-video">
-                    <div class="jp-type-single">
-				<div id="jquery_jplayer_<?php echo $id?>" class="jp-jplayer"></div>
-				<div class="jp-gui">
-					<div class="jp-video-play">
-						<a href="javascript:;" class="jp-video-play-icon" tabindex="1">play</a>
-					</div>
-					<div class="jp-interface">
-						<div class="jp-progress">
-							<div class="jp-seek-bar">
-								<div class="jp-play-bar"></div>
-							</div>
-						</div>
-						<div class="jp-current-time"></div>
-						<div class="jp-duration"></div>
-						<div class="jp-title">
-							<ul>
-								<li><?php echo $title?></li>
-							</ul>
-						</div>
-						<div class="jp-controls-holder">
-							<ul class="jp-controls">
-								<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
-								<li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
-								<li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
-								<li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
-								<li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
-								<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
-							</ul>
-							<div class="jp-volume-bar">
-								<div class="jp-volume-bar-value"></div>
-							</div>
+            });
+        });
 
-							<ul class="jp-toggles">
-								<li><a href="javascript:;" class="jp-full-screen" tabindex="1" title="full screen">full screen</a></li>
-								<li><a href="javascript:;" class="jp-restore-screen" tabindex="1" title="restore screen">restore screen</a></li>
-								<li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
-								<li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="jp-no-solution">
-					<span>Update Required</span>
-					To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
-				</div>
-			</div>
-			</div>
-                    <?
+    </script>
+    <div id="jp_container_<?php echo $id?>" class="jp-video">
+        <div class="jp-type-single">
+            <div id="jquery_jplayer_<?php echo $id?>" class="jp-jplayer"></div>
+            <div class="jp-gui">
+                <div class="jp-video-play">
+                    <a href="javascript:;" class="jp-video-play-icon" tabindex="<?echo $id?>">play</a>
+                </div>
+                <div class="jp-interface">
+                    <div class="jp-progress">
+                        <div class="jp-seek-bar">
+                            <div class="jp-play-bar"></div>
+                        </div>
+                    </div>
+                    <div class="jp-current-time"></div>
+                    <div class="jp-duration"></div>
+                    <div class="jp-title">
+                        <ul>
+                            <li><?php echo $title?></li>
+                        </ul>
+                    </div>
+                    <div class="jp-controls-holder">
+                        <ul class="jp-controls">
+                            <li><a href="javascript:;" class="jp-play" tabindex="<?echo $id?>">play</a></li>
+                            <li><a href="javascript:;" class="jp-pause" tabindex="<?echo $id?>">pause</a></li>
+                            <li><a href="javascript:;" class="jp-stop" tabindex="<?echo $id?>">stop</a></li>
+                            <li><a href="javascript:;" class="jp-mute" tabindex="<?echo $id?>" title="mute">mute</a></li>
+                            <li><a href="javascript:;" class="jp-unmute" tabindex="<?echo $id?>" title="unmute">unmute</a></li>
+                            <li><a href="javascript:;" class="jp-volume-max" tabindex="<?echo $id?>" title="max volume">max volume</a></li>
+                        </ul>
+                        <div class="jp-volume-bar">
+                            <div class="jp-volume-bar-value"></div>
+                        </div>
+
+                        <ul class="jp-toggles">
+                            <li><a href="javascript:;" class="jp-full-screen" tabindex="1" title="full screen">full screen</a></li>
+                            <li><a href="javascript:;" class="jp-restore-screen" tabindex="1" title="restore screen">restore screen</a></li>
+                            <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+                            <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="jp-no-solution">
+                <span>Update Required</span>
+                To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+            </div>
+        </div>
+    </div>
+<?
+}
+
+function playlist($videoList){
+    $id="N";
+    $playlist="";
+    foreach($videoList as $video){
+        $urlVideo=$video['file'];
+        if($playlist!="")
+            $playlist.=",";
+        $playlist.='{
+            title:"'.$video['keterangan'].'",
+            artist:"",
+            mp3:"'.app_base_url()."/".$video['file'].'",
+            poster:"'.app_base_url()."/".$video['file'].'",
+            m4v: "'.app_base_url()."/".$urlVideo.'",
+            ogv: "'.app_base_url()."/".$urlVideo.'",
+            webmv: "'.app_base_url()."/".$urlVideo.'",
+            poster: "'.app_base_url()."/".$urlVideo.'"
+          }';
+
+    }
+
+    ?>
+    <script type="text/javascript">
+        var myPlaylist = new jPlayerPlaylist({
+            jPlayer: "#jquery_jplayer_<?php echo $id?>",
+            cssSelectorAncestor: "#jp_container_<?php echo $id?>"
+        }, [
+            <?php echo $playlist?>
+        ], {
+            playlistOptions: {
+                enableRemoveControls: true
+            },
+            swfPath: "/js",
+            supplied: "ogv, m4v, oga, mp3",
+            smoothPlayBar: true,
+            keyEnabled: true,
+            audioFullScreen: true // Allows the audio poster to go full screen via keyboard
+        });
+    </script>
+    <!-- The method Playlist.displayPlaylist() uses this unordered list -->
+    <div id="jp_container_N" class="jp-video jp-video-270p">
+        <div class="jp-type-playlist">
+            <div id="jquery_jplayer_N" class="jp-jplayer"></div>
+            <div class="jp-gui">
+                <div class="jp-video-play">
+                    <a href="javascript:;" class="jp-video-play-icon" tabindex="1">play</a>
+                </div>
+                <div class="jp-interface">
+                    <div class="jp-progress">
+                        <div class="jp-seek-bar">
+                            <div class="jp-play-bar"></div>
+                        </div>
+                    </div>
+                    <div class="jp-current-time"></div>
+                    <div class="jp-duration"></div>
+                    <div class="jp-title">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="jp-controls-holder">
+                        <ul class="jp-controls">
+                            <li><a href="javascript:;" class="jp-previous" tabindex="1">previous</a></li>
+                            <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+                            <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+                            <li><a href="javascript:;" class="jp-next" tabindex="1">next</a></li>
+                            <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+                            <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+                            <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+                            <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+                        </ul>
+                        <div class="jp-volume-bar">
+                            <div class="jp-volume-bar-value"></div>
+                        </div>
+                        <ul class="jp-toggles">
+                            <li><a href="javascript:;" class="jp-full-screen" tabindex="1" title="full screen">full screen</a></li>
+                            <li><a href="javascript:;" class="jp-restore-screen" tabindex="1" title="restore screen">restore screen</a></li>
+                            <li><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a></li>
+                            <li><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a></li>
+                            <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+                            <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="jp-playlist">
+                <ul>
+                    <!-- The method Playlist.displayPlaylist() uses this unordered list -->
+                    <li></li>
+                </ul>
+            </div>
+            <div class="jp-no-solution">
+                <span>Update Required</span>
+                To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+            </div>
+        </div>
+    </div>
+    <?
 }
 ?>
+

@@ -10,9 +10,9 @@
 <div id="page">
     <div id="content fashion">
         <div class="post">
-            <h1 class="title">Galery <?php echo $produk['namaProduk']?></h1>
+            <h1 class="title">Galery Produk <?php echo $produk['namaProduk']?></h1>
+            <a href="<? echo app_base_url('pageadmin/produk/galeri_add?id='.$produk['idProduk'])?>">Tambah</a>
             <div class="entry">
-                <a href="<?php echo app_base_url('pageadmin/produk/galeri_add?id='.$_GET['id'])?>">Tambah</a>
     <table class="myOtherTable">
     <thead>
         <tr>
@@ -29,24 +29,20 @@
             ?>
             <tr>
                 <td><?php echo $i++;?></td>
-                
-                    <?php 
+                <td colspan="2">
+                    <?php
                     if($data['format']=='video'):
-                        ?><td colspan="2"><?
                         play_video($data['file'], $data['keterangan'],$data['idGaleri']);
-                        ?><td><?
                     else:
                         $b64Src = "data:".$data['type'].";base64," . base64_encode($data["file"]);
-                        ?><td><?echo '<img src="'.$b64Src.'" alt="" width="100px"/>';?></td><?
-                        ?><td><?echo $data['keterangan'];?></td><?
-                        
+                        echo '<img src="'.$b64Src.'" alt="" width="100px"/>';
                     endif;?>
-                
-                
+                </td>
+                <!--<td><?php echo $data['keterangan'] ?></td>-->
                 <td class="button">
                     <a href="<?php echo app_base_url("pageadmin/produk/galeri_delete?idGaleri=$data[idGaleri]&id=$_GET[id]") ?>" onclick="return window.confirm('<?php echo "Apakah anda yakin akan menghapus galeri_produk $data[nama]?" ?>')"class="hapus">hapus</a>
                 </td>
-            </tr>    
+            </tr>
         </tbody>
         <?php
     }

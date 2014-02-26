@@ -10,5 +10,5 @@ if(count($userResult)>0){
     $_SESSION['failed']    ='Login gagal, user tidak ditemukan'; 
 }
 //show_array($userResult);exit;
-    redirect('pageadmin');
+    redirect('pageadmin/index');
 ?>

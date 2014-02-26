@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,15 +11,15 @@
             <div class="row-fluid">
                 <div class="span12 center HeaderTitle login-header">
                     <h2>Login Admin/Operator</h2>
-                </div><!--/span-->
-            </div><!--/row-->
+                </div>
+            </div>
 
             <div class="row-fluid" >
                 <div class="well span5 center login-box">
                     <div class="alert alert-info">
                         Please login with your Username and Password.
                     </div>
-                    <form action='<?php echo app_base_url('pageadmin/login/proses') ?>' method='POST' >
+                    <form action='<?php echo app_base_url('login_proses') ?>' method='POST' >
                         <fieldset>
                             <div class="input-prepend" title="Username" data-rel="tooltip">
                                 <span class="add-on"><i class="icon-user"></i></span>
@@ -39,11 +38,11 @@
                             </p>
                         </fieldset>
                     </form>
-                </div><!--/span-->
-            </div><!--/row-->
-        </div><!--/fluid-row-->
+                </div>
+            </div>
+        </div>
 
-    </div><!--/.fluid-container-->
+    </div>
     <script type="text/javascript">
 <?php
 if (isset($_SESSION['success'])) {

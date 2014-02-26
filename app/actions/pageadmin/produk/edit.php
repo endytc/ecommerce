@@ -10,7 +10,7 @@ if($_POST){
 }
 $produk=  _select_unique_result("select * from produk where idProduk=$_GET[id]");
 $kategoriList=  _select_arr("select * from kategori");
-$supplierList=  _select_arr("select * from supplier");
+$pemasokList=  _select_arr("select * from pemasok");
 ?>
 <?php require_once 'app/actions/pageadmin/produk/left_menu.php';?>
 <div id="page">
@@ -64,13 +64,13 @@ $supplierList=  _select_arr("select * from supplier");
                             </td>
                         </tr>
                         <tr>
-                            <td class="title">Supplier</td>
+                            <td class="title">Pemasok</td>
                             <td>
-                                <select name="idSupplier">
-                                    <option value="">- Pilih Supplier -</option>
+                                <select name="idPemasok">
+                                    <option value="">- Pilih Pemasok -</option>
                                     <?php
-                                    foreach ($supplierList as $key => $supplier) {
-                                        echo "<option value='$supplier[idSupplier]' ".($supplier['idSupplier']==$produk['idSupplier']?'selected':'').">$supplier[namaSupplier]</value>";
+                                    foreach ($pemasokList as $key => $pemasok) {
+                                        echo "<option value='$pemasok[idPemasok]' ".($pemasok['idPemasok']==$produk['idPemasok']?'selected':'').">$pemasok[namaPemasok]</value>";
                                     }
                                     ?>
                                 </select>
