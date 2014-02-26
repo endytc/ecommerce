@@ -25,13 +25,19 @@ $layoutScript = 'views/layout';
 if(isset($_SESSION['layout'])){
     $layoutScript = $_SESSION['layout'];
     unset($_SESSION['layout']);
-}else if(empty($_SESSION['id_user']) && ($pageModule=='/pageadmin' || $pageModuleOperator=='/pageoperator')){
+}else if(empty($_SESSION['id_user']) && ($pageModule=='/pageadmin')){
     $layoutScript = 'views/login';
+    $_SESSION['login']='admin';
+}else if(empty($_SESSION['id_user']) && ($pageModule=='/pagemembe')){
+    $layoutScript = 'views/login';
+    $_SESSION['login']='member';
 }else if(isset($_GET['ajax']) && $_GET['ajax']==1){
     $layoutScript='views/no_layout';
 }
 else if($pageModule=='/pageadmin' || $pageModuleOperator=='/pageoperator'){
     $layoutScript='views/admin_layout';
+}else if($pageModule=='/pagemembe'){
+    $layoutScript='views/member_layout';
 }
 require_once $rootPath . '/core/core.php';
 require_once $rootPath .'/app/lib/function.php';
