@@ -71,6 +71,27 @@ $kategoriList=_select_arr("select * from kategori");
                                 </ul>
                             </div>
                             </div>
+                            <?php
+                                    if(isset($_SESSION['success'])){
+                                        $message="$_SESSION[success]";
+                                        unset($_SESSION['success']);
+                                        $class="fb4";
+                                    }
+                                    if(isset($_SESSION['failed'])){
+                                        $message= "$_SESSION[failed]";
+                                        unset($_SESSION['failed']);
+                                        $class="fb5";
+                                    }else{
+                                        $message="";
+                                        $class="";
+                                    }
+                                    
+                                    ?>
+                            <div class="<?php echo $class ?>" style="width: 800;margin: 0 auto;
+padding: 20px 0;">
+                                <?php echo $message?>
+                            </div>
+                            <?php if($message!="") echo "<br><br>";?>
                                                 <!-- end header -->
 <?php echo $_content?>
                                                 <div style="clear: both; height: 30px">&nbsp;</div>

@@ -15,8 +15,8 @@ if($_POST){
     foreach($chartList as $idMember=>$chartByMember){
         foreach($chartByMember as $chart){
             mysql_query("insert into pesanan (`tanggalPesanan`, `jumlah`, `tanggalBayar`, `tanggalKirim`,
-                `idProduk`, `idMember`,idPelanggan) values
-                (now(),$chart[jumlah],NULL,NULL,$chart[idProduk],$idMember,$$idPelanggan)") or die (mysql_error());
+                `idProduk`, `idMember`,idPembeli) values
+                (now(),$chart[jumlah],NULL,NULL,$chart[idProduk],$idMember,$idPelanggan)") or die (mysql_error());
             mysql_query("update produk set stok=stok-$chart[jumlah] where idProduk='$chart[idProduk]'") or die(mysql_error());
         }
     }
