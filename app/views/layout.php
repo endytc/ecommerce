@@ -51,8 +51,20 @@ $kategoriList=_select_arr("select * from kategori");
                                         </dl>
 
                                     </li>
-                                    <li><a href="<?php echo app_base_url() . '/best_seller' ?>#" accesskey="4" title="">Best Seller</a></li>
-                                    <li><a href="<?php echo app_base_url() . '/new_arrival' ?>#" accesskey="4" title="">New Arrival</a></li>
+
+                                    <li>
+                                        <dl class="dropdown">
+                                            <dt id="two-ddheader" onmouseover="ddMenu('two', 1)" onmouseout="ddMenu('two', -1)"><a href="<?php echo app_base_url() . '/best_seller' ?>#" accesskey="4" title="">Best Seller</a></dt>
+                                            <dd id="two-ddcontent" onmouseover="cancelHide('two')" onmouseout="ddMenu('two', -1)">
+                                                <ul>
+                                                   <a href="<?php echo app_base_url().'/new_arrival'?>#" accesskey="'4" title="">New Arrival</a>
+                                                </ul>
+
+                                            </dd>
+                                        </dl>
+
+                                    </li>
+                                   
                                     <li><a href="<?php echo app_base_url() . '/berita?id=2' ?>#" accesskey="4" title="">About</a></li>
                                     <?php if(isset($_SESSION['chart']) && count($_SESSION['chart'])>0):?>
                                         <li><a href="<?php echo app_base_url() . '/chart' ?>" accesskey="4" title="">Chart (<?php echo count($_SESSION['chart'])?>)</a></li>

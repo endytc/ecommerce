@@ -29,11 +29,11 @@
             <tr>
                 <td><?php echo $i++; ?></td>
                 <td><?php echo $data['idSubKriteria'] ?></td>
-                <td><?php echo $data['namaKategori'] ?></td>
                 <td><?php echo $data['namaSubKriteria'] ?></td>
+                <td><?php echo $data['namaKategori'] ?></td>
                 <td class="button">
                     <a href="<?php echo app_base_url("pageadmin/sub_kriteria/edit?id=$data[idSubKriteria]") ?>" class="edit">edit</a>
-                    <a href="<?php echo app_base_url("pageadmin/sub_kriteria/delete?id=$data[idSubKriteria]") ?>" onclick="return confirm('<?php echo "Apakah anda yakin akan menghapus kategori $data[nama]?" ?>')"class="hapus">hapus</a>
+                    <a href="<?php echo app_base_url("pageadmin/sub_kriteria/delete?id=$data[idSubKriteria]") ?>" onclick="return confirm('<?php echo "Apakah anda yakin akan menghapus kategori $data[namaSubKriteria]?" ?>')"class="hapus">hapus</a>
                 </td>
             </tr>
         </tbody>

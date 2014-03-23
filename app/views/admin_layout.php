@@ -17,12 +17,10 @@
             <div id="menu">
                 <ul>
                     <li class=""><a href="<?php echo app_base_url('pageadmin/index')?>" accesskey="1" title="">Home</a></li>
-                    <li>
-                        <a href="<?php echo app_base_url('pageadmin/produk')?>#" accesskey="2" title="">Produk</a></li>
+                    <li><a href="<?php echo app_base_url('pageadmin/kategori')?>#" accesskey="2" title="">Kategori</a></li>
+                    <li><a href="<?php echo app_base_url('pageadmin/sub_kriteria')?>#" accesskey="4" title="">Sub Kriteria</a></li>
+                    <li><a href="<?php echo app_base_url('pageadmin/listMember')?>#" accesskey="4" title="">Member</a></li>
                     
-                    <li><a href="<?php echo app_base_url('pageadmin/berita')?>#" accesskey="4" title="">Berita</a></li>
-                    <li><a href="<?php echo app_base_url('pageadmin/order')?>#" accesskey="4" title="">Order</a></li>
-                    <li><a href="<?php echo app_base_url('pageadmin/pemasok')?>#" accesskey="4" title="">Pemasok</a></li>
                     
                 </ul>
             </div>
