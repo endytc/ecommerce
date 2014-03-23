@@ -3,6 +3,7 @@
     $produk=  _select_arr("select * from produk p
         join pemasok s on p.idPemasok=s.idPemasok
         join kategori k on p.idKategori=k.idKategori
+        join sub_kriteria w on p.idSubKriteria=w.idSubKriteria
         where p.idMember=$_SESSION[id_user]
         limit $page,".  getPerPage());
     $pagging= pagination("select * from produk", getPerPage());
@@ -19,6 +20,7 @@
             <th>No</th>
             <th>Produk</th>
             <th>Kategori</th>
+            <th>Sub Kriteria</th>
             <th>Harga</th>
             <th>Discount</th>
             <th>Warna</th>
@@ -37,6 +39,7 @@
                 <td><?php echo $i++; ?></td>
                 <td><?php echo $data['namaProduk'] ?></td>
                 <td><?php echo $data['namaKategori'] ?></td>
+                <td><?php echo $data['namaSubKriteria']?></td>
                 <td><?php echo $data['harga'] ?></td>
                 <td><?php echo $data['discount'] ?></td>
                 <td><?php echo $data['warna'] ?></td>
@@ -46,7 +49,7 @@
                 <td class="button">
                     <a href="<?php echo app_base_url("pagemember/produk/galeri?id=$data[idProduk]") ?>" class="edit">galeri</a>
                     <a href="<?php echo app_base_url("pagemember/produk/edit?id=$data[idProduk]") ?>" class="edit">edit</a>
-                    <a href="<?php echo app_base_url("pagemember/produk/delete?id=$data[idProduk]") ?>" onclick="return confirm('<?php echo "Apakah anda yakin akan menghapus produk $data[nama]?" ?>')"class="hapus">hapus</a>
+                    <a href="<?php echo app_base_url("pagemember/produk/delete?id=$data[idProduk]") ?>" onclick="return confirm('<?php echo "Apakah anda yakin akan menghapus produk $data[namaProduk]?" ?>')"class="hapus">hapus</a>
                 </td>
             </tr>    
         </tbody>

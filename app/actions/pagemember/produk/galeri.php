@@ -40,7 +40,7 @@
                 </td>
                 <!--<td><?php echo $data['keterangan'] ?></td>-->
                 <td class="button">
-                    <a href="<?php echo app_base_url("pagemember/produk/galeri_delete?idGaleri=$data[idGaleri]&id=$_GET[id]") ?>" onclick="return window.confirm('<?php echo "Apakah anda yakin akan menghapus galeri_produk $data[nama]?" ?>')"class="hapus">hapus</a>
+                    <a href="<?php echo app_base_url("pagemember/produk/galeri_delete?idGaleri=$data[idGaleri]&id=$_GET[id]") ?>" onclick="return window.confirm('<?php echo "Apakah anda yakin akan menghapus galeri produk ini?" ?>')"class="hapus">hapus</a>
                 </td>
             </tr>
         </tbody>

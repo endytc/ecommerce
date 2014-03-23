@@ -49,8 +49,20 @@ $kategoriList=_select_arr("select * from kategori");
                                         </dl>
 
                                     </li>
-                                    <li><a href="<?php echo app_base_url() . '/best_seller' ?>#" accesskey="4" title="">Best Seller</a></li>
-                                    <li><a href="<?php echo app_base_url() . '/new_arrival' ?>#" accesskey="4" title="">New Arrival</a></li>
+
+                                    <li>
+                                        <dl class="dropdown">
+                                            <dt id="two-ddheader" onmouseover="ddMenu('two', 1)" onmouseout="ddMenu('two', -1)"><a href="<?php echo app_base_url() . '/best_seller' ?>#" accesskey="4" title="">Best Seller</a></dt>
+                                            <dd id="two-ddcontent" onmouseover="cancelHide('two')" onmouseout="ddMenu('two', -1)">
+                                                <ul>
+                                                   <a href="<?php echo app_base_url().'/new_arrival'?>#" accesskey="'4" title="">New Arrival</a>
+                                                </ul>
+
+                                            </dd>
+                                        </dl>
+
+                                    </li>
+                                   
                                     <li><a href="<?php echo app_base_url() . '/berita?id=2' ?>#" accesskey="4" title="">About</a></li>
                                     <?php if(isset($_SESSION['chart']) && count($_SESSION['chart'])>0):?>
                                         <li><a href="<?php echo app_base_url() . '/chart' ?>" accesskey="4" title="">Chart (<?php echo count($_SESSION['chart'])?>)</a></li>
@@ -71,6 +83,27 @@ $kategoriList=_select_arr("select * from kategori");
                                 </ul>
                             </div>
                             </div>
+                            <?php
+                                    if(isset($_SESSION['success'])){
+                                        $message="$_SESSION[success]";
+                                        unset($_SESSION['success']);
+                                        $class="fb4";
+                                    }
+                                    if(isset($_SESSION['failed'])){
+                                        $message= "$_SESSION[failed]";
+                                        unset($_SESSION['failed']);
+                                        $class="fb5";
+                                    }else{
+                                        $message="";
+                                        $class="";
+                                    }
+                                    
+                                    ?>
+                            <div class="<?php echo $class ?>" style="width: 800;margin: 0 auto;
+padding: 20px 0;">
+                                <?php echo $message?>
+                            </div>
+                            <?php if($message!="") echo "<br><br>";?>
                                                 <!-- end header -->
 <?php echo $_content?>
                                                 <div style="clear: both; height: 30px">&nbsp;</div>

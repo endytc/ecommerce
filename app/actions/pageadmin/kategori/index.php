@@ -31,7 +31,7 @@
                 <td><?php echo $data['deskripsi'] ?></td>
                 <td class="button">
                     <a href="<?php echo app_base_url("pageadmin/kategori/edit?id=$data[idKategori]") ?>" class="edit">edit</a>
-                    <a href="<?php echo app_base_url("pageadmin/kategori/delete?id=$data[idKategori]") ?>" onclick="return confirm('<?php echo "Apakah anda yakin akan menghapus kategori $data[nama]?" ?>')"class="hapus">hapus</a>
+                    <a href="<?php echo app_base_url("pageadmin/kategori/delete?id=$data[idKategori]") ?>" onclick="return confirm('<?php echo "Apakah anda yakin akan menghapus kategori $data[namaKategori]?" ?>')"class="hapus">hapus</a>
                 </td>
             </tr>
         </tbody>

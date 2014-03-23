@@ -2,7 +2,7 @@
 $where="1";
 $kategoryName="";
 if(isset($_GET['id_sub'])){
-    $where.=" and produk.idSub_kriteria=$_GET[id_sub]";
+    $where.=" and produk.idSubKriteria=$_GET[id_sub]";
     $kategory=_select_unique_result("select * from sub_kriteria where idSubKriteria='$_GET[id_sub]'");
     $kategoryName=$kategory['namaSubKriteria'];
 }else if(isset($_GET['id'])){
@@ -12,7 +12,7 @@ if(isset($_GET['id_sub'])){
 }
 $productList=_select_arr("select distinct produk.* from produk
     left join kategori on produk.idKategori=kategori.idKategori
-    left join sub_kriteria on (sub_kriteria.idKategori=produk.idSub_kriteria or sub_kriteria.idKategori=kategori.idKategori)
+    left join sub_kriteria on (sub_kriteria.idKategori=produk.idSubKriteria or sub_kriteria.idKategori=kategori.idKategori)
     where $where
     ");
 $kategori=_select_unique_result("select * from kategori where idKategori='$_GET[id]'");

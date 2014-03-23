@@ -44,6 +44,10 @@ if(count($productGallery)>0){
             <td><?php echo $product['stok']?></td>
         </tr>
         <tr>
+            <td>Deskripsi</td>
+            <td><?php echo $product['deskripsi']?></td>
+        </tr>
+        <tr>
             <td>Penjual</td>
             <td><?php echo $product['nama']?></td>
         </tr>

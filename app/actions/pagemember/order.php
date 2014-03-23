@@ -6,7 +6,7 @@ if(isset($_GET['status']) && $_GET['status']!=''){
 }
 $orderList=_select_arr("select * from pesanan
     join produk on produk.idProduk=pesanan.idProduk
-    left join pelanggan on pesanan.idPembeli=pelanggan.idPelanggan
+    left join pelanggan on pesanan.idPelanggan=pelanggan.idPelanggan
         where $where and pesanan.idMember='$member[idMember]'");
 
 ?>
