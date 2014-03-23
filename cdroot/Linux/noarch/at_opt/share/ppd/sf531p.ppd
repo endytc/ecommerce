@@ -1,0 +1,188 @@
+*PPD-Adobe: "4.3"
+
+*FormatVersion: "4.3"
+*FileVersion: "1.3"
+*LanguageVersion: English
+*LanguageEncoding: ISOLatin1
+*PCFileName:  "sf531p.ppd"
+*Manufacturer: "Samsung"
+*Product: "(LaserMFP)"
+*ModelName:     "Samsung SF-531P"
+*ShortNickName: "SF-531P"
+*NickName:      "Samsung SF-531P CUPS v1.1"
+*PSVersion: "(3010.000) 550"
+*TTRasterizer:  Type42
+*cupsVersion: 1.1
+*cupsManualCopies: False
+*cupsFilter:  "application/vnd.cups-postscript 0 rastertosamsungspl"
+
+*%=== Basic Capabilities ===============
+*LanguageLevel: "3"
+*ColorDevice: False
+*DefaultColorSpace: Gray
+*FileSystem:  False
+*Throughput:  "8"
+*LandscapeOrientation: Plus90
+*VariablePaperSize: False
+
+*% ====== Constraints ===========
+
+*% Base options group ===================
+*OpenGroup: General/General
+
+*% Paper Handling ===================
+*OpenUI *PageSize/Paper Size: PickOne
+*OrderDependency: 5 AnySetup *PageSize
+*DefaultPageSize: A4
+*PageSize Letter/Letter:  "<</PageSize[612 792]/ImagingBBox null>>setpagedevice"
+*PageSize Legal/Legal:  "<</PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+*PageSize Executive/Executive: "<</PageSize[522 756]/ImagingBBox null>>setpagedevice"
+*PageSize A4/A4:    "<</PageSize[595 842]/ImagingBBox null>>setpagedevice"
+*PageSize A5/A5:    "<</PageSize[421 595]/ImagingBBox null>>setpagedevice"
+*PageSize JB5/JIS B5:   "<</PageSize[516 729]/ImagingBBox null>>setpagedevice"
+*PageSize Folio/US Folio: "<</PageSize[612 936]/ImagingBBox null>>setpagedevice"
+*PageSize Com10/No.10 Env.: "<</PageSize[297 684]/ImagingBBox null>>setpagedevice"
+*PageSize B5/ISO B5: "<</PageSize[499 709]/ImagingBBox null>>setpagedevice"
+*PageSize C5/C5 Env.: "<</PageSize[459 649]/ImagingBBox null>>setpagedevice"
+*PageSize C6/C6 Env.: "<</PageSize[323 459]/ImagingBBox null>>setpagedevice"
+*PageSize DL/DL Env.: "<</PageSize[312 624]/ImagingBBox null>>setpagedevice"
+*PageSize Monarch/Monarch Env.: "<</PageSize[279 540]/ImagingBBox null>>setpagedevice"
+*CloseUI: *PageSize
+
+*OpenUI *PageRegion: PickOne
+*OrderDependency: 5 AnySetup *PageRegion
+*DefaultPageRegion: A4
+*PageRegion Letter/Letter:  "<</PageSize[612 792]/ImagingBBox null>>setpagedevice"
+*PageRegion Folio/US Folio: "<</PageSize[612 936]/ImagingBBox null>>setpagedevice"
+*PageRegion Legal/Legal:  "<</PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+*PageRegion Executive/Executive: "<</PageSize[522 756]/ImagingBBox null>>setpagedevice"
+*PageRegion A4/A4:    "<</PageSize[595 842]/ImagingBBox null>>setpagedevice"
+*PageRegion A5/A5:    "<</PageSize[421 595]/ImagingBBox null>>setpagedevice"
+*PageRegion JB5/JIS B5:   "<</PageSize[516 729]/ImagingBBox null>>setpagedevice"
+*PageRegion Com10/No.10 Env.: "<</PageSize[297 684]/ImagingBBox null>>setpagedevice"
+*PageRegion B5/ISO B5: "<</PageSize[499 709]/ImagingBBox null>>setpagedevice"
+*PageRegion C5/C5 Env.: "<</PageSize[459 649]/ImagingBBox null>>setpagedevice"
+*PageRegion C6/C6 Env.: "<</PageSize[323 459]/ImagingBBox null>>setpagedevice"
+*PageRegion DL/DL Env.: "<</PageSize[312 624]/ImagingBBox null>>setpagedevice"
+*PageRegion Monarch/Monarch Env.: "<</PageSize[279 540]/ImagingBBox null>>setpagedevice"
+*CloseUI: *PageRegion
+
+*DefaultImageableArea: A4
+*ImageableArea Letter/Letter: "10 36 601 756"
+*ImageableArea Legal/Legal:   "10 36 601 972"
+*ImageableArea Executive/Executive: "12 36 511 684"
+*ImageableArea A4/A4:     "12 36 584 806"
+*ImageableArea A5/A5:     "9 36 412 559"
+*ImageableArea JB5/JIS B5:    "11 36 506 693"
+*ImageableArea Folio/US Folio:    "10 36 601 900"
+*ImageableArea Com10/No.10 Env.:    "11 36 287 648"
+*ImageableArea B5/ISO B5: "12 36 488 673"
+*ImageableArea C5/C5 Env.:    "11 36 448 613"
+*ImageableArea C6/C6 Env.:    "8 36 315 424"
+*ImageableArea DL/DL Env.:    "12 36 300 588"
+*ImageableArea Monarch/Monarch Env.: "11 36 268 504"
+
+*DefaultPaperDimension: A4
+*PaperDimension Letter/Letter:  "612 792"
+*PaperDimension Legal/Legal:    "612 1008"
+*PaperDimension Executive/Executive:  "522 756"
+*PaperDimension A4/A4:      "595 842"
+*PaperDimension A5/A5:      "421 595"
+*PaperDimension JB5/JIS B5:   "516 729"
+*PaperDimension Folio/US Folio:   "612 936"
+*PaperDimension Com10/No.10 Env.: "297 684"
+*PaperDimension B5/ISO B5:  "499 709"
+*PaperDimension C5/C5 Env.: "459 649"
+*PaperDimension C6/C6 Env.: "323 459"
+*PaperDimension DL/DL Env.: "312 624"
+*PaperDimension Monarch/Monarch Env.: "279 540"
+
+*%=== Resolution Information ======================
+*OpenUI *Resolution/Resolution: PickOne
+*OrderDependency: 10 AnySetup *Resolution
+*DefaultResolution: 600dpi
+*Resolution 300dpi/300 dpi (Draft): "<</HWResolution[300 300]/cupsColorOrder 0/cupsColorSpace 3/cupsCompression 2>>setpagedevice"
+*Resolution 600dpi/600 dpi (Normal): "<</HWResolution[600 600]/cupsColorOrder 0/cupsColorSpace 3/cupsCompression 2>>setpagedevice"
+*CloseUI: *Resolution
+
+*CloseGroup: General
+
+*% Other options group ===================
+*OpenGroup: Extra/Extras
+
+*OpenUI *MediaSource/Paper Source: PickOne
+*OrderDependency: 25 AnySetup *MediaSource
+*DefaultMediaSource: Auto
+*MediaSource Auto/Auto selection: "(<<) cvx exec /MediaSource Auto (>>) cvx exec setpagedevice"
+*MediaSource Manual/Manual Feeder: "(<<) cvx exec /MediaSource Manual (>>) cvx exec setpagedevice"
+*CloseUI: *MediaSource
+
+*JCLOpenUI *MediaType/Paper Type: PickOne
+*OrderDependency: 30 JCLSetup *MediaType
+*DefaultMediaType: Auto
+*MediaType Auto/Printer Default: "(<<) cvx exec /MediaType Auto (>>) cvx exec setpagedevice"
+*MediaType Normal/Plain Paper: "(<<) cvx exec /MediaType Normal (>>) cvx exec setpagedevice"
+*MediaType Bond/Bond Paper: "(<<) cvx exec /MediaType Bond (>>) cvx exec setpagedevice"
+*MediaType Ohp/Transparency: "(<<) cvx exec /MediaType Ohp (>>) cvx exec setpagedevice"
+*MediaType Card/CardStock: "(<<) cvx exec /MediaType Card (>>) cvx exec setpagedevice"
+*MediaType Label/Labels: "(<<) cvx exec /MediaType Label (>>) cvx exec setpagedevice"
+*MediaType Used/Preprinted: "(<<) cvx exec /MediaType Used (>>) cvx exec setpagedevice"
+*MediaType Color/Color paper: "(<<) cvx exec /MediaType Color (>>) cvx exec setpagedevice"
+*MediaType Env/Envelopes: "(<<) cvx exec /MediaType Env (>>) cvx exec setpagedevice"
+*JCLCloseUI: *MediaType
+
+*JCLOpenUI *JCLEconomode/Toner Save Mode: PickOne
+*OrderDependency: 35 JCLSetup *Economode
+*DefaultJCLEconomode: PRINTERDEFAULT
+*JCLEconomode PRINTERDEFAULT/Printer Setting: ""
+*JCLEconomode SAVE/On: "@PJL SET ECONOMODE = ON<0A>"
+*JCLEconomode STANDARD/Off: "@PJL SET ECONOMODE = OFF<0A>"
+*JCLCloseUI: *JCLEconomode
+
+*JCLOpenUI *Altitude/Altitude: PickOne
+*OrderDependency: 45 JCLSetup *Altitude
+*DefaultAltitude: Low
+*Altitude Low/Low: "@PJL SET ALTITUDE = LOW<0A>"
+*Altitude High/High: "@PJL SET ALTITUDE = HIGH<0A>"
+*JCLCloseUI: *Altitude
+
+*CloseGroup: Extra
+
+*DefaultFont: Courier
+*Font AvantGarde-Book: Standard "(001.006S)" Standard ROM
+*Font AvantGarde-BookOblique: Standard "(001.006S)" Standard ROM
+*Font AvantGarde-Demi: Standard "(001.007S)" Standard ROM
+*Font AvantGarde-DemiOblique: Standard "(001.007S)" Standard ROM
+*Font Bookman-Demi: Standard "(001.004S)" Standard ROM
+*Font Bookman-DemiItalic: Standard "(001.004S)" Standard ROM
+*Font Bookman-Light: Standard "(001.004S)" Standard ROM
+*Font Bookman-LightItalic: Standard "(001.004S)" Standard ROM
+*Font Courier: Standard "(002.004S)" Standard ROM
+*Font Courier-Bold: Standard "(002.004S)" Standard ROM
+*Font Courier-BoldOblique: Standard "(002.004S)" Standard ROM
+*Font Courier-Oblique: Standard "(002.004S)" Standard ROM
+*Font Helvetica: Standard "(001.006S)" Standard ROM
+*Font Helvetica-Bold: Standard "(001.007S)" Standard ROM
+*Font Helvetica-BoldOblique: Standard "(001.007S)" Standard ROM
+*Font Helvetica-Narrow: Standard "(001.006S)" Standard ROM
+*Font Helvetica-Narrow-Bold: Standard "(001.007S)" Standard ROM
+*Font Helvetica-Narrow-BoldOblique: Standard "(001.007S)" Standard ROM
+*Font Helvetica-Narrow-Oblique: Standard "(001.006S)" Standard ROM
+*Font Helvetica-Oblique: Standard "(001.006S)" Standard ROM
+*Font NewCenturySchlbk-Bold: Standard "(001.009S)" Standard ROM
+*Font NewCenturySchlbk-BoldItalic: Standard "(001.007S)" Standard ROM
+*Font NewCenturySchlbk-Italic: Standard "(001.006S)" Standard ROM
+*Font NewCenturySchlbk-Roman: Standard "(001.007S)" Standard ROM
+*Font Palatino-Bold: Standard "(001.005S)" Standard ROM
+*Font Palatino-BoldItalic: Standard "(001.005S)" Standard ROM
+*Font Palatino-Italic: Standard "(001.005S)" Standard ROM
+*Font Palatino-Roman: Standard "(001.005S)" Standard ROM
+*Font Symbol: Special "(001.007S)" Special ROM
+*Font Times-Bold: Standard "(001.007S)" Standard ROM
+*Font Times-BoldItalic: Standard "(001.009S)" Standard ROM
+*Font Times-Italic: Standard "(001.007S)" Standard ROM
+*Font Times-Roman: Standard "(001.007S)" Standard ROM
+*Font ZapfChancery-MediumItalic: Standard "(001.007S)" Standard ROM
+*Font ZapfDingbats: Special "(001.004S)" Standard ROM
+
+*% end of PPD file for Samsung MFP device

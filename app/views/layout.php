@@ -28,7 +28,9 @@ $kategoriList=_select_arr("select * from kategori");
                                 </div>
                             </div>
                             <div class="search-holder">
-                                <input type="text" /> <button>Search</button>
+                                <form action="<?php echo app_base_url('cari')?>">
+                                    <input type="text" name="key"> <button>Search</button>
+                                </form>
                             </div>
                             <div id="menu">
                                 <ul>

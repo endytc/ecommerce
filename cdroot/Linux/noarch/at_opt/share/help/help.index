@@ -1,0 +1,68 @@
+Acquiring image|AcquiringImage.htm
+Add printer wizard|ConfiguratorAddPrinterWizard.htm
+Adding new printer|AddingNewPrinter.htm
+Adjusting scan area boundaries in Preview Pane|AdjustingScanAreaBoundaries.htm
+Browsing available printers|BrowsingPrinters.htm
+Browsing available scanners|BrowsingScanners.htm
+Changing brightness|ChangingBrightness.htm
+Changing color depth|ChangingColorDepth.htm
+Changing contrast|ChangingContrast.htm
+Configure Tools|ImageEditorConfigureTools.htm
+Configuring external tools|ConfiguringExternalTools.htm
+Destination Properties dialog|SLPRDestinationProperties.htm
+Doing Optical Character Recognition|DoingOCR.htm
+Editing images|EditingImages.htm
+File Dialog|FileDialog.htm
+Flipping|Flipping.htm
+FTP Upload|ImageEditorFTPUpload.htm
+Glossary|Glossary.htm
+How to ensure that printer works|EnsurePrinterWorks.htm
+Image editor|ImageEditor.htm
+Image Processing|ImageProcessing.htm
+Installed Scanner Drivers dialog|ConfiguratorInstalledScannerDrivers.htm
+Inverting Colors|InvertingColors.htm
+Main Window|ImageManagerMainWindow.htm
+Making preview|MakingPreview.htm
+Ports|ConfiguratorPortsConfiguration.htm
+Monitoring print job state|MonitoringJobState.htm
+Overview|ImageManager.htm
+Passing images to external tools|PassingImagesToExternalTools.htm
+Printer properties|PrinterProperties.htm
+Printer properties dialog|ConfiguratorPrinterProperties.htm
+Printers configuration|ConfiguratorPrintersConfiguration.htm
+Printing documents|PrintingDocuments.htm
+Printing files|PrintingFiles.htm
+Printing from applications|PrintingFromApplications.htm
+Printing from GIMP|PrintingFromGIMP.htm
+Printing from Image Manager|PrintingFromImageManager.htm
+Printing from KDE editors|PrintingFromKDE.htm
+Printing from other applications|PrintingFromOther.htm
+Printing from Star Office|PrintingFromStarOffice.htm
+Rotating|Rotating.htm
+GUI LPR utility|SLPR.htm
+Driver package overview|DriverPackageOverview.htm
+Scaling|Scaling.htm
+Scanner Properties|ConfiguratorScannerProperties.htm
+Scanners Configuration|ConfiguratorScannersConfiguration.htm
+Scanning documents|ScanningDocuments.htm
+Selecting scanner|SelectingScanner.htm
+Send Message|ImageEditorSendMessage.htm
+Sending images by e-mail|SendingImagesByEMail.htm
+Setting scanner options|SettingScannerOptions.htm
+Shifting|Shifting.htm
+Skewing|Skewing.htm
+Starting graphics editor|StartingGraphicsEditor.htm
+Storing and printing image files|StoringAndPrintingImages.htm
+Storing scanner options|StoringScannerOptions.htm
+Testing printer|ConfiguratorTestingPrinter.htm
+Toolbars|Toolbars.htm
+Troubleshooting printers|TroubleshootingPrinterDoesntPrint.htm
+Troubleshooting scanners|TroubleshootingScannerDoesntScan.htm
+Troubleshooting, scanner is not visible|TroubleshootingScannerIsNotVisible.htm
+Undoing and redoing|UndoingAndRedoing.htm
+Uploading images to FTP site|UploadingImagesByFTP.htm
+Using Automatic Document Feeder (ADF)|UsingAutomaticDocumentFeeder.htm
+Using Clipboard|UsingClipboard.htm
+Viewing Image Properties|ViewingImageProperties.htm
+Viewing images|ViewingImages.htm
+Zooming|Zooming.htm

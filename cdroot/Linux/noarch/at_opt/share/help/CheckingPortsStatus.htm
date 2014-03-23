@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Checking MFP Ports Status</title>
+<LINK REL = "stylesheet" TYPE="text/css" HREF = "Simple_Topic.css">
+</head>
+<body>
+
+
+<h2>Checking MFP Ports Status</h2>
+<p>To check the status of any MFP port that might be used for connecting MFP devices,
+do the following:</p>
+
+<ol>
+  <li>Open <a href="Configurator.htm"> Configurator</a>.</li>
+  <li>Switch to <a href="ConfiguratorPortsConfiguration.htm"> ports configuration</a>.</li>
+  <li>Select desired port in the <a href="ConfiguratorPortsConfiguration.htm#PortsList">ports
+    list</a>.</li>
+  <li>Look at the contents of <i>Selected port</i> pane.</li>
+</ol>
+
+<p>The <i> Selected port</i> pane displays the following information about the port:
+port type (parallel or USB), name of device connected to the port at the moment
+and port busy status. The latter status can be reported as &quot;Port is
+unused&quot; or as description of the operation being performed over the port.
+Possible formats of such description might look like &quot;<i>Application1</i>
+is printing&quot; or &quot;<i>Application2</i> is scanning&quot;. Here
+Application1 or Application2 are names of applications using the port.</p>
+
+<p>If a port is occupied by printing or scanning operation initiated by some
+application, the port becomes inaccessible for other &quot;consumers&quot;. In
+case of abnormal termination of the current port's owner, the port remains busy
+and cannot be claimed further. To relinquish the port, you can press the <i>Release
+port</i> button. Please, avoid releasing the port while normal operation is
+going on. This results in immediate I/O error and the current job is terminated.</p>
+
+<p><b>See also</b>:</p>
+
+<p><a href="SharingPortsBetweenPrintersAndScanners.htm"> Sharing ports between printers and scanners</a></p>
+<a href="ConfiguratorPortsConfiguration.htm">Ports configuration</a>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Configure Tools</title>
+<LINK REL = "stylesheet" TYPE="text/css" HREF = "Simple_Topic.css">
+</head>
+<body>
+
+<h2>Configure Tools</h2>
+
+<p>With this dialog you configure external tools in order to
+run them from the <i>Tools</i> menu.</p>
+
+<h4>Graphics Editor Command</h4>
+<p>You use this command to start the graphics editor from console.</p>
+
+<p>Use the &lt;BMP&gt; keyword as tyhe name of the
+input image file, for example:</p>
+
+<p><i>pixie &lt;BMP&gt;</i></p>
+<p>or</p>
+<p><i>/usr/bin/gimp &lt;BMP&gt;</i></p>
+
+<h4>Graphics Editor Input File &lt;BMP&gt;</h4>
+
+<p>
+The Graphics Editor Input File is a temporary BMP image file.
+The file is saved, based on the name given to the selected image.
+Then the file name is passed to the Graphics Editor
+Command replacing the keyword &lt;BMP&gt;.</p>
+
+<p>It is recommended to use file names in the home or temporary
+directory, for example:</p>
+
+<p><i>~/tmp.bmp</i></p>
+<p><i>/tmp/img/editor_input.bmp</i></p>
+<p><i>~/temp/my_image.bmp</i></p>
+
+<h4>OCR command</h4>
+
+<p>Starts the OCR program from the console.</p>
+
+<p>In this command use the &lt;PBM&gt; keyword as name of the
+input image file, and <i></i>the
+&lt;TXT&gt; keyword as name of the output text file, for example:</p>
+
+<p><i>cuteocr –f&lt;TXT&gt; &lt;PBM&gt;</i></p>
+
+<h4>OCR Input &lt;PBM&gt;</h4>
+
+<p>The OCR Input File is a temporary PMB image file.
+The file is saved, based on the name given to the selected image.
+Then the file name is passed to the OCR replacing the keyword &lt;PBM&gt;.</p>
+
+<p>It is recommended to use file names in the home or temporary directory, for example:</p>
+<p><i>~/tmp.pbm</i></p>
+<p><i>/tmp/img/ocr_input.pbm</i></p>
+<p><i>~/temp/my_image.pbm</i></p>
+
+<h4>OCR Output / Text Editor Input &lt;TXT&gt;</h4>
+
+<p>The OCR Output / Text Editor Input File is a temporary TXT file.
+The file is saved, based on the name given to the selected image.
+Then the file name is passed to the Text Editor Command (see below)
+replacing the keyword &lt;TXT&gt;.</p>
+
+<p>It is recommended to use file names in the home or temporary
+directory, for example:</p>
+
+<p><i>~/tmp.txt</i></p>
+<p><i>/tmp/txt/ocr_output.txt</i></p>
+<p><i>~/temp/recognized_text.txt</i></p>
+
+<h4>Text Editor Command</h4>
+
+<p>The Text Editor Command is used to start the text editor from the console.</p>
+
+<p>In this command use the &lt;TXT&gt; keyword as name of the
+input text file, for example:</p>
+
+<p><i>kedit &lt;TXT&gt;</i></p>
+
+<p>&nbsp;</p>
+
+<p><b>See also:</b></p>
+<p><a href="ImageEditor.htm">Image Editor</a></p>
+<p><a href="ConfiguringExternalTools.htm">Configuring external tools</a></p>
+
+</body>
+</html>

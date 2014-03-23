@@ -30,9 +30,8 @@ if($_POST){
                             </td>
                         </tr>
                        <tr>
-                            <td class="title">Isi</td>
-                            <td>
-                                <textarea name="isi" cols="80" rows="40"></textarea>
+                            <td colspan="2">
+                                <textarea name="isi" cols="100" rows="20" class="tinymce" style="width: 100%"></textarea>
                             </td>
                         </tr>
                 <tr>
