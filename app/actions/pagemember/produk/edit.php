@@ -67,11 +67,11 @@ $sub_kriteriaList= _select_arr("select * from sub_kriteria");
                          <tr>
                             <td class="title">Sub Kriteria</td>
                             <td>
-                                <select name="idSubKriteria">
+                                <select name="idSub_kriteria">
                                     <option value="">- Pilih Sub Kriteria -</option>
                                     <?php
                                     foreach ($sub_kriteriaList as $key => $sub_kriteria) {
-                                        echo "<option value='$sub_kriteria[idSubKriteria]' ".($sub_kriteria['idSubKriteria']==$produk['idSubKriteria']?'selected':'').">$sub_kriteria[namaSubKriteria]</value>";
+                                        echo "<option value='$sub_kriteria[idSub_kriteria]' ".($sub_kriteria['idSub_kriteria']==$produk['idSub_kriteria']?'selected':'').">$sub_kriteria[namaSubKriteria]</value>";
                                     }
                                     ?>
                                 </select>

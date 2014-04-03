@@ -1,5 +1,5 @@
 <?php
-$is_success= _query("delete from sub_kriteria where idSubKriteria=$_GET[id]");
+$is_success= _query("delete from sub_kriteria where idSub_kriteria=$_GET[id]");
 
 if($is_success){
     $_SESSION['success']="Data Sub Kriteria berhasil dihapus";

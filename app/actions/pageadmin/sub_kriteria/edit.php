@@ -1,6 +1,6 @@
 <?php
 if($_POST){
-    $is_success=_update('sub_kriteria', $_POST, 'idSubKriteria='.$_GET['id']);
+    $is_success=_update('sub_kriteria', $_POST, 'idSub_kriteria='.$_GET['id']);
     if($is_success){
         $_SESSION['success']="Data sub_kriteria berhasil diperbarui";
     }else{
@@ -8,7 +8,7 @@ if($_POST){
     }
     redirect('pageadmin/sub_kriteria/index');
 }
-$sub_kriteria=  _select_unique_result("select * from sub_kriteria where idSubKriteria=$_GET[id]");
+$sub_kriteria=  _select_unique_result("select * from sub_kriteria where idSub_kriteria=$_GET[id]");
 $kategoriList=  _select_arr("select * from kategori");
 ?>
 <?php require_once 'app/actions/pageadmin/sub_kriteria/left_menu.php';?>
@@ -21,7 +21,7 @@ $kategoriList=  _select_arr("select * from kategori");
                     <table class="myOtherTable formTable">
                         <tr>
                             <td class="title">ID SubKriteria</td>
-                            <td><input type="text" name="idSubKriteria" value="<?php echo $sub_kriteria['idSubKriteria']?>"/></td>
+                            <td><input type="text" name="idSub_kriteria" value="<?php echo $sub_kriteria['idSub_kriteria']?>"/></td>
                         </tr>
                         <tr>
                             <td class="title">Nama SubKriteria</td>

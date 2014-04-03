@@ -1,9 +1,9 @@
 <?php
     $page=  array_value($_GET, 'pages',1)*  getPerPage()-  getPerPage();
     $produk=  _select_arr("select * from produk p
-        join pemasok s on p.idPemasok=s.idPemasok
-        join kategori k on p.idKategori=k.idKategori
-        join sub_kriteria w on p.idSubKriteria=w.idSubKriteria
+        left join pemasok s on p.idPemasok=s.idPemasok
+        left join kategori k on p.idKategori=k.idKategori
+        left join sub_kriteria w on p.idSub_kriteria=w.idSubkriteria
         where p.idMember=$_SESSION[id_user]
         limit $page,".  getPerPage());
     $pagging= pagination("select * from produk", getPerPage());

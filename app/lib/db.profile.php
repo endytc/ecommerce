@@ -1,7 +1,7 @@
 <?php
 return array(
     'host'=>'localhost',
-    'dbname'=>'ecommerce',
+    'dbname'=>'skripsi_ecommerce',
     'user'=>'root',
     'password'=>''
 )

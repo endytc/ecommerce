@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 03, 2014 at 04:18 AM
+-- Generation Time: Apr 03, 2014 at 04:34 PM
 -- Server version: 5.5.31
 -- PHP Version: 5.4.19
 
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `pelanggan` (
   `email` varchar(30) NOT NULL,
   `telepon` varchar(15) NOT NULL,
   PRIMARY KEY (`idPelanggan`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `pelanggan`
@@ -184,7 +184,8 @@ INSERT INTO `pelanggan` (`idPelanggan`, `namaPelanggan`, `alamat`, `email`, `tel
 (14, 'sadsa', ';alsd', ';lasd', 'klasd'),
 (15, 'sadsa', ';alsd', ';lasd', 'klasd'),
 (16, 'sadsa', ';alsd', ';lasd', 'klasd'),
-(17, 'sadsa', ';alsd', ';lasd', 'klasd');
+(17, 'sadsa', ';alsd', ';lasd', 'klasd'),
+(18, 'zainal', '1234', 'endi_tc@yahoo.co.id', '12345');
 
 -- --------------------------------------------------------
 
@@ -199,15 +200,17 @@ CREATE TABLE IF NOT EXISTS `pemasok` (
   `telepon` varchar(15) NOT NULL,
   `email` varchar(30) NOT NULL,
   `fax` varchar(15) NOT NULL,
-  PRIMARY KEY (`idPemasok`)
+  `idMember` int(11) NOT NULL,
+  PRIMARY KEY (`idPemasok`),
+  KEY `idMember` (`idMember`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `pemasok`
 --
 
-INSERT INTO `pemasok` (`idPemasok`, `namaPemasok`, `alamat`, `telepon`, `email`, `fax`) VALUES
-(1, 'dresstokill', 'yogyakarta', '080808', 'd@gmail.com', '0562898989');
+INSERT INTO `pemasok` (`idPemasok`, `namaPemasok`, `alamat`, `telepon`, `email`, `fax`, `idMember`) VALUES
+(1, 'dresstokill', 'yogyakarta', '080808', 'd@gmail.com', '0562898989', 0);
 
 -- --------------------------------------------------------
 
@@ -223,16 +226,16 @@ CREATE TABLE IF NOT EXISTS `pesanan` (
   `tanggalKirim` date DEFAULT NULL,
   `idProduk` int(11) NOT NULL,
   `idMember` int(11) NOT NULL,
-  `idPembeli` int(11) NOT NULL,
+  `idPelanggan` int(11) NOT NULL,
   `status` enum('pending','approve','ignore') NOT NULL DEFAULT 'pending',
   PRIMARY KEY (`idPesanan`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `pesanan`
 --
 
-INSERT INTO `pesanan` (`idPesanan`, `tanggalPesanan`, `jumlah`, `tanggalBayar`, `tanggalKirim`, `idProduk`, `idMember`, `idPembeli`, `status`) VALUES
+INSERT INTO `pesanan` (`idPesanan`, `tanggalPesanan`, `jumlah`, `tanggalBayar`, `tanggalKirim`, `idProduk`, `idMember`, `idPelanggan`, `status`) VALUES
 (1, '2014-02-21', 1, NULL, NULL, 1, 0, 1, 'pending'),
 (2, '2014-02-21', 1, NULL, NULL, 2, 0, 1, 'pending'),
 (3, '2014-02-21', 2, NULL, NULL, 1, 1, 1, 'approve'),
@@ -243,7 +246,8 @@ INSERT INTO `pesanan` (`idPesanan`, `tanggalPesanan`, `jumlah`, `tanggalBayar`, 
 (8, '2014-02-21', 2, NULL, NULL, 1, 1, 1, 'ignore'),
 (9, '2014-02-21', 1, NULL, NULL, 2, 0, 1, 'pending'),
 (10, '2014-02-21', 2, NULL, NULL, 1, 1, 1, 'approve'),
-(11, '2014-03-12', 1, NULL, NULL, 2, 0, 17, 'pending');
+(11, '2014-03-12', 1, NULL, NULL, 2, 0, 17, 'pending'),
+(12, '2014-04-03', 1, NULL, NULL, 1, 1, 18, 'approve');
 
 -- --------------------------------------------------------
 
@@ -273,7 +277,7 @@ CREATE TABLE IF NOT EXISTS `produk` (
 --
 
 INSERT INTO `produk` (`idProduk`, `namaProduk`, `harga`, `discount`, `warna`, `size`, `deskripsi`, `stok`, `idMember`, `idKategori`, `idSub_kriteria`, `idPemasok`, `waktu`) VALUES
-(1, 'dress pattern', 100000, 0, 'merah, item, biru', 's,m,l', 'bahan halus', 4, 1, 3, 0, 1, '2014-02-23 00:49:29'),
+(1, 'dress pattern', 100000, 0, 'merah, item, biru', 's,m,l', 'bahan halus', 3, 1, 3, 0, 1, '2014-02-23 00:49:29'),
 (2, 'kasjuhdkjasd', 786234823, 10, 'merah', '20', 'aklsjdakldn', 16, 0, 2, 0, 1, '2014-02-23 00:49:29'),
 (3, 'tes', 874823, 10, 'akljdad', '87', 'kjlhasd', 0, 0, 0, 2, 1, '2014-02-23 00:49:29'),
 (4, 'asd', 878979, 87, 'lasjdald', '2', 'kjadkad', 10, 0, 2, 0, 1, '2014-02-23 00:49:29'),
