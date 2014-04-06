@@ -20,8 +20,9 @@
                     <li><a href="<?php echo app_base_url('pagemember/produk')?>#" accesskey="2" title="">Produk</a></li>
                     <li><a href="<?php echo app_base_url('pagemember/berita')?>#" accesskey="4" title="">Berita</a></li>
                     <li><a href="<?php echo app_base_url('pagemember/order')?>#" accesskey="4" title="">Order</a></li>
+                    <li><a href="<?php echo app_base_url('pagemember/laporan')?>#" accesskey="4" title="">Laporan</a></li>
                     <li><a href="<?php echo app_base_url('pagemember/pemasok')?>#" accesskey="4" title="">Pemasok</a></li>
-                    
+
                 </ul>
             </div>
         </div><!--end header-->

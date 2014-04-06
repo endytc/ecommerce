@@ -32,7 +32,8 @@ $berita = _select_unique_result("select * from berita where idBerita= $_GET[id]"
                        <tr>
                             <td class="title">Isi</td>
                             <td>
-                                <input type="text" name="isi" cols="80" rows="40" value="<?php echo $berita['isi']?>">
+                                <textarea type="text" name="isi" cols="80"
+                                       class='tinymce' rows="40" ><?php echo $berita['isi']?></textarea>
                             </td>
                         </tr>
                 <tr>

@@ -26,6 +26,7 @@ $pageModule=substr(app_request_get_path_info(),0,10);
 $pageModuleOperator=substr(app_request_get_path_info(),0,13);
 $layoutScript = 'views/layout';
 //print_r($_SESSION);
+
 if(isset($_SESSION['layout'])){
     $layoutScript = $_SESSION['layout'];
     unset($_SESSION['layout']);
@@ -37,8 +38,7 @@ if(isset($_SESSION['layout'])){
     $_SESSION['login']='member';
 }else if(isset($_GET['ajax']) && $_GET['ajax']==1){
     $layoutScript='views/no_layout';
-}
-else if($pageModule=='/pageadmin' || $pageModuleOperator=='/pageoperator'){
+}else if($pageModule=='/pageadmin' || $pageModuleOperator=='/pageoperator'){
     $layoutScript='views/admin_layout';
 }else if($pageModule=='/pagemembe'){
     $layoutScript='views/member_layout';

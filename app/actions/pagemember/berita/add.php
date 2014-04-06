@@ -1,6 +1,16 @@
 <?php
 if($_POST){
     $_POST['idMember']=$_SESSION['id_user'];
+//    $_FILES["file"]["name"]=  date('dmY').'_'.time().'_'.$_FILES["file"]["name"];
+//    $filePath='upload/'.$_FILES["gambar"]['name'];
+//    //success
+//    move_uploaded_file($_FILES["gambar"]["tmp_name"], $filePath);
+//
+//    $_FILES["file"]["name"]=  date('dmY').'_'.time().'_'.$_FILES["file"]["name"];
+//    $filePath='upload/'.$_FILES["video"]['name'];
+//    //success
+//    move_uploaded_file($_FILES["video"]["tmp_name"], $filePath);
+
     $is_success=  _insert('berita', $_POST);
     if($is_success){
         $_SESSION['success']="Data berita berhasil ditambahkan";
@@ -33,7 +43,7 @@ if($_POST){
                        <tr>
                             <td class="title">Isi</td>
                             <td>
-                                <textarea name="isi" cols="80" rows="40"></textarea>
+                                <textarea name="isi" cols="80" rows="40" class='tinymce'></textarea>
                             </td>
                         </tr>
                 <tr>

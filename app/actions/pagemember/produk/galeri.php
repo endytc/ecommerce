@@ -29,7 +29,7 @@
             ?>
             <tr>
                 <td><?php echo $i++;?></td>
-                <td colspan="2">
+                <td colspan="<?php echo ($data['format']=='video')?'2':'1'?>">
                     <?php
                     if($data['format']=='video'):
                         play_video($data['file'], $data['keterangan'],$data['idGaleri']);
@@ -38,7 +38,9 @@
                         echo '<img src="'.$b64Src.'" alt="" width="100px"/>';
                     endif;?>
                 </td>
-                <!--<td><?php echo $data['keterangan'] ?></td>-->
+                <?php if($data['format']!='video'):?>
+                    <td><?php echo $data['keterangan'] ?></td>
+                <?php endif;?>
                 <td class="button">
                     <a href="<?php echo app_base_url("pagemember/produk/galeri_delete?idGaleri=$data[idGaleri]&id=$_GET[id]") ?>" onclick="return window.confirm('<?php echo "Apakah anda yakin akan menghapus galeri produk ini?" ?>')"class="hapus">hapus</a>
                 </td>

@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="<?php echo app_base_url().'/assets/'?>dropdown/dropdown_1.css" type="text/css" />
         <link rel="stylesheet" href="<?php echo app_base_url().'/assets/'?>jplayer.skin/pink.flag/jplayer.pink.flag.css" type="text/css" />
         <link rel="stylesheet" href="<?php echo app_base_url().'/assets/'?>validate.css" type="text/css" />
+        <link rel="stylesheet" href="<?php echo app_base_url().'/assets/'?>jquery-ui/css/smoothness/jquery-ui-1.10.4.custom.min.css" type="text/css" />
 
         <link href="<?php echo app_base_url().'/assets/'?>grid.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="<?php echo app_base_url().'/assets/'?>facebook.css" rel="stylesheet" type="text/css" media="screen" />
@@ -14,6 +15,7 @@
 
 <!--        <script type="text/javascript" src="--><?php //echo app_base_url().'/assets/'?><!--slide/jquery-1.2.6.min.js"></script>-->
         <script type="text/javascript" src="<?php echo app_base_url().'/assets/'?>jquery-1.7.min.js"></script>
+        <script type="text/javascript" src="<?php echo app_base_url().'/assets/'?>jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
         <script type="text/javascript" src="<?php echo app_base_url().'/assets/jplayer.js/'?>jquery.jplayer.js"></script>
         <script type="text/javascript" src="<?php echo app_base_url().'/assets/jplayer.js/'?>jplayer.playlist.min.js"></script>
         <script type="text/javascript" src="<?php echo app_base_url().'/assets/jplayer.js/'?>jquery.jplayer.inspector.js"></script>

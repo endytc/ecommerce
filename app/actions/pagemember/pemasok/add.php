@@ -4,6 +4,7 @@ if($_POST){
     $is_success=  _insert('pemasok', $_POST);
     if($is_success){
         $_SESSION['success']="Data pemasok berhasil ditambahkan";
+        redirect('pagemember/pemasok');
     }else{
         $_SESSION['failed']="Data pemasok gagal ditambahkan";
     }

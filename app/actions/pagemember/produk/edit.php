@@ -8,9 +8,10 @@ if($_POST){
     }
     redirect('pagemember/produk/index');
 }
+$user=get_user_login();
 $produk=  _select_unique_result("select * from produk where idProduk=$_GET[id]");
 $kategoriList=  _select_arr("select * from kategori");
-$pemasokList=  _select_arr("select * from pemasok");
+$pemasokList=  _select_arr("select * from pemasok where idMember=$user[id]");
 $sub_kriteriaList= _select_arr("select * from sub_kriteria");
 ?>
 <?php require_once 'app/actions/pagemember/produk/left_menu.php';?>
@@ -71,7 +72,7 @@ $sub_kriteriaList= _select_arr("select * from sub_kriteria");
                                     <option value="">- Pilih Sub Kriteria -</option>
                                     <?php
                                     foreach ($sub_kriteriaList as $key => $sub_kriteria) {
-                                        echo "<option value='$sub_kriteria[idSub_kriteria]' ".($sub_kriteria['idSub_kriteria']==$produk['idSub_kriteria']?'selected':'').">$sub_kriteria[namaSubKriteria]</value>";
+                                        echo "<option value='$sub_kriteria[idSubKriteria]' ".($sub_kriteria['idSubKriteria']==$produk['idSub_kriteria']?'selected':'').">$sub_kriteria[namaSubKriteria]</value>";
                                     }
                                     ?>
                                 </select>

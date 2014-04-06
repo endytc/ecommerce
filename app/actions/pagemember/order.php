@@ -51,6 +51,8 @@ $orderList=_select_arr("select * from pesanan
         $i=1;
         $jumlah=0;
         foreach($orderList as  $id=>$produk):
+            $total=($produk['harga']-$produk['harga']*$produk['discount']/100)*$produk['jumlah'];
+            $jumlah+=$total;
             ?>
             <tr>
                 <td><?php echo $i++?></td>
@@ -62,7 +64,7 @@ $orderList=_select_arr("select * from pesanan
                 <td><?php echo $produk['discount']?></td>
                 <td><?php echo $produk['warna']?></td>
                 <td><?php echo $produk['jumlah']?></td>
-                <td><?php echo $produk['harga']-$produk['harga']*$produk['discount']/100?></td>
+                <td><?php echo $total?></td>
                 <td>
                     <?php if($produk['status']=='pending'):?>
                     <a href="<? echo app_base_url('pagemember/statusOrder?status=approve&id_pesanan='.$produk['idPesanan'])?>">Vefivikasi</a>
@@ -75,7 +77,7 @@ $orderList=_select_arr("select * from pesanan
         </thead>
         <tfoot>
         <tr>
-            <td colspan="7">Total</td>
+            <td colspan="9">Total</td>
             <td><?php echo $jumlah?></td>
         </tr>
         </tfoot>
