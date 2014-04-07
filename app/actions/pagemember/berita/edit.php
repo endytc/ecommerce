@@ -36,16 +36,6 @@ $berita = _select_unique_result("select * from berita where idBerita= $_GET[id]"
                                        class='tinymce' rows="40" ><?php echo $berita['isi']?></textarea>
                             </td>
                         </tr>
-                <tr>
-                    <td class="title">Gambar</td>
-                    <td>&nbsp;=&nbsp;<input name="gambar" type="file" value="<?php echo $berita['gambar']?>"/></td>
-
-                </tr>
-                <tr>
-                    <td class="title">Video</td>
-                    <td>&nbsp;=&nbsp;<input name="video" type="file" value="<?php echo $berita['video']?>"/></td>
-
-                </tr>
                     </table>
                     <div class="buttonpane">
                         <span class="ButtonInput">

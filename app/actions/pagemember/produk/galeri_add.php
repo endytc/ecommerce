@@ -20,7 +20,7 @@ if($_POST){
             $stmt->bindParam(':file', $filePath);
         else
             $stmt->bindParam(':file', $blob, PDO::PARAM_LOB);
-        $is_success = $stmt->execute();
+        $is_success = $stmt->execute();g
     } catch (Exception $pe) {
         die($pe->getMessage());
     }
