@@ -3,7 +3,7 @@ if($_POST){
     $is_success=  _insert('sub_kriteria', $_POST);
     if($is_success){
         $_SESSION['success']="Data sub_kriteria berhasil ditambahkan";
-        $lastData=_select_unique_result("select * from sub_kriteria order by idSub_kriteria desc limit 0,1");
+        $lastData=_select_unique_result("select * from sub_kriteria order by idSubKriteria desc limit 0,1");
     }else{
         $_SESSION['failed']="Data sub_kriteria gagal ditambahkan";
     }
@@ -21,7 +21,7 @@ $kategoriList=  _select_arr("select * from kategori");
                     <table class="myOtherTable formTable">
 <!--                         <tr>
                             <td class="title">ID SubKriteria</td>
-                            <td><input type="text" name="idSub_kriteria" value=""/></td>
+                            <td><input type="text" name="idSubKriteria" value=""/></td>
                         </tr>-->
                          <tr>
                             <td class="title">Kategori</td>

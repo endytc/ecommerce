@@ -71,7 +71,7 @@ $sub_kriteriaList= _select_arr("select * from sub_kriteria");
                         <tr>
                             <td class="title">Sub Kriteria</td>
                             <td>
-                                <select name="idSub_kriteria">
+                                <select name="idSubKriteria">
                                     <option value="">- Pilih Sub Kriteria -</option>
                                     <?php
                                     foreach ($sub_kriteriaList as $key => $sub_kriteria) {

@@ -45,7 +45,7 @@ if(count($productGallery)>0){
         </tr>
         <tr>
             <td>Deskripsi</td>
-            <td><?php echo $product['deskripsi']?></td>
+            <td style="max-width: 90px;"><?php echo $product['deskripsi']?></td>
         </tr>
         <tr>
             <td>Penjual</td>

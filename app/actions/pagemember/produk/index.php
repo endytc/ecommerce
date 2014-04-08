@@ -3,7 +3,7 @@
     $produk=  _select_arr("select * from produk p
         left join pemasok s on p.idPemasok=s.idPemasok
         left join kategori k on p.idKategori=k.idKategori
-        left join sub_kriteria w on p.idSub_kriteria=w.idSubkriteria
+        left join sub_kriteria w on p.idSubKriteria=w.idSubkriteria
         where p.idMember=$_SESSION[id_user]
         limit $page,".  getPerPage());
     $pagging= pagination("select * from produk", getPerPage());
