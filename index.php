@@ -1,13 +1,13 @@
 <?php 
 session_start();
  
-ini_set('display_startup_errors', true);
-ini_set('display_errors', true);
-error_reporting(E_ALL | E_STRICT);
+//ini_set('display_startup_errors', true);
+//ini_set('display_errors', true);
+//error_reporting(E_ALL | E_STRICT);
 
-//ini_set('display_startup_errors', false);
-//ini_set('display_errors', false);
-//error_reporting(0);
+ini_set('display_startup_errors', false);
+ini_set('display_errors', false);
+error_reporting(0);
 
 $rootPath = dirname(__FILE__);
 $applicationDir = 'app';

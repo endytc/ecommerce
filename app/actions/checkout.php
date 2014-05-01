@@ -4,9 +4,12 @@ if($_POST){
     $idPelanggan=_select_max_id('pelanggan','idPelanggan');
     $chartList=array();
     foreach($_SESSION['chart'] as $id=>$chart){
-        $produk=_select_unique_result("select produk.*,if(kategori.namaKategori is not null,namaKategori,namaSubKriteria) as kategori from produk
+        $produk=_select_unique_result("select produk.*,if(kategori.namaKategori is not null,namaKategori,namaSubKriteria) as kategori,
+              member.nama as penjual,member.alamat as alamat_penjual,member.telepon as telepon_penjual
+          from produk
                 left join kategori on produk.idKategori=kategori.idKategori
                 left join sub_kriteria on (sub_kriteria.idKategori=produk.idSubKriteria or sub_kriteria.idKategori=kategori.idKategori)
+                left join member on member.idMember=produk.idMember
                 where idProduk='$id'");
         $produk['jumlah']=$chart;
         $chartList[$produk['idMember']][]=$produk;
@@ -21,6 +24,11 @@ if($_POST){
             mysql_query("update produk set stok=stok-$chart[jumlah] where idProduk='$chart[idProduk]'") or die(mysql_error());
         }
     }
+    //    show_array($chartList);
+    require_once "app/actions/cetak_nota.php";
+    ?>
+    <script>window.open('<?=app_base_url($filename)?>', 'MyWindow', 'width=600px, height=500px, scrollbars=1');</script>
+    <?
     unset($_SESSION['chart']);
     if($is_success){
         $_SESSION['success']="Pembelian berhasil dilakukan, penjual akan segera menghubungi anda";
@@ -32,6 +40,7 @@ if($_POST){
 
 }
 ?>
+
 <div id="page">
     <div id="content fashion">
         <div class="post">
