@@ -8,7 +8,7 @@ Released for free under a Creative Commons Attribution 2.5 License
 body {
 	margin: 0;
 	padding: 0;
-	background: #372412 url(images/img01.gif) repeat-x;
+	background:#372412 url(images/img01.gif) repeat-x;
 	font-size: 13px;
 	color: #FFFFFF;
 }
@@ -79,10 +79,10 @@ img { border: none; }
 }
 
 #logo h1 {
-	float: left;
+	float: none;
 	padding: 40px 40px 0 50px;
 	letter-spacing: -2px;
-	font-size: 48px;
+	font-size: 40px;
 }
 
 #logo h2 {
@@ -206,14 +206,14 @@ img { border: none; }
 #menu a {
 	display: block;
 	float: left;
-	width: 126px;
+	width: 144px;
 	height: 73px;
 	padding-top: 35px;
 	text-transform: lowercase;
 	text-decoration: none;
 	text-align: center;
 	letter-spacing: -1px;
-	font-size: 24px;
+	font-size: 22px;
 	color: #FFFFFF;
 }
 
@@ -241,6 +241,12 @@ img { border: none; }
 #content {
 	float: left;
 	width: 532px;
+}
+#content h1 a{
+    color: #FFFFFF;
+}
+#content p a{
+    color: #FFFFFF;
 }
  #content fashion{
 	float: right;
@@ -290,14 +296,17 @@ img { border: none; }
 
 #sidebar li ul {
 	padding: 15px 0;
+        
 }
 
 #sidebar li li {
 	padding-left: 30px;
-	border-bottom: 1px dotted #4A3903;
+	border-bottom: 1px dotted #4A390;
 	background: url(images/img06.gif) no-repeat 15px 50%;
 }
-
+#sidebar li a{
+    color: #FFFFFF;
+}
 #sidebar h2 {
 	margin: 0;
 	padding: 20px 0 2px 30px;
@@ -368,8 +377,9 @@ img { border: none; }
 	color: #C28C21;
 }
 
-.myOtherTable { background-color:#FFFFE0;border-collapse:collapse;color:#000;font-size:18px; }
-.myOtherTable th { background-color:#C28C21;color:white;width:50%;text-align: center }
+.myOtherTable { background-color:#FFFFE0;border-collapse:collapse;color:#000;font-size:16px; }
+/*.myOtherTableMember { background-color:#FFFFE0;border-collapse:collapse;color:#000;font-size:18px; }*/
+.myOtherTable th { background-color:#C28C21;color:white;width:18%;text-align:justify }
 .myOtherTable td, .myOtherTable th { padding:5px;border:0; }
 .myOtherTable td { border-bottom:1px dotted #C28C21; }
 .myOtherTable td.title { text-align: right;width: 30% }

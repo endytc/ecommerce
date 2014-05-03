@@ -10,17 +10,16 @@
                 </div>
             </div>
             <div id="logo">
-                <h1><a href="<?php echo app_base_url() . '/' ?>#">PAGE MEMBER - ECOMMERCE</a></h1>
+                <h1><a href="<?php echo app_base_url() . '/' ?>#"></a></h1>
                 <div id="flags-holder">
                 </div>
             </div>
             <div id="menu">
                 <ul>
-                    <li class=""><a href="<?php echo app_base_url('pagemember/index')?>" accesskey="1" title="">Home</a></li>
+                    <li class=""><a href="<?php echo app_base_url('pagemember/index')?>" accesskey="1" title="">Beranda</a></li>
                     <li><a href="<?php echo app_base_url('pagemember/produk')?>#" accesskey="2" title="">Produk</a></li>
                     <li><a href="<?php echo app_base_url('pagemember/berita')?>#" accesskey="4" title="">Berita</a></li>
-                    <li><a href="<?php echo app_base_url('pagemember/order')?>#" accesskey="4" title="">Order</a></li>
-                    <li><a href="<?php echo app_base_url('pagemember/laporan')?>#" accesskey="4" title="">Laporan</a></li>
+                    <li><a href="<?php echo app_base_url('pagemember/order')?>#" accesskey="4" title="">Pesanan</a></li>
                     <li><a href="<?php echo app_base_url('pagemember/pemasok')?>#" accesskey="4" title="">Pemasok</a></li>
 
                 </ul>

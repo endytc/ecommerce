@@ -4,8 +4,8 @@
                         where idProduk='$product[idProduk]' and format='gambar'");
         $b64Src = "data:" . $gambar['type'] . ";base64," . base64_encode($gambar["file"]);
         ?>
-        <div class="grid_3 ">
-            <img style="width:200" src="<?php echo $b64Src ?>" class="katalog"
+    <div class="grid_3 " style="padding-bottom: 20px">
+            <img style="width:200px;height: 150px" src="<?php echo $b64Src ?>" class="katalog"
                  alt="no image for <?php echo $product['namaProduk'] ?>"/>
 
             <div class="" style="text-align: center;"><?php echo $product['namaProduk'] ?></div>

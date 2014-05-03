@@ -6,17 +6,17 @@
         <div id="header">
             <div class="login-holder">
                 <div class="options">
-                    <a href="<?php echo app_base_url('pageadmin/user/profile') ?>">My Profile</a>||<a href="<?php echo app_base_url() . '/pageadmin/login/logout' ?>">Logout</a>
+                    <a href="<?php echo app_base_url() . '/pageadmin/login/logout' ?>">Logout</a>
                 </div>
             </div>
             <div id="logo">
-                <h1><a href="<?php echo app_base_url() . '/' ?>#">PAGE MEMBER - ECOMMERCE</a></h1>
+                <h1><a href="<?php echo app_base_url() . '/' ?>#"></a></h1>
                 <div id="flags-holder">
                 </div>
             </div>
             <div id="menu">
                 <ul>
-                    <li class=""><a href="<?php echo app_base_url('pageadmin/index')?>" accesskey="1" title="">Home</a></li>
+                    <li class=""><a href="<?php echo app_base_url('pageadmin/index')?>" accesskey="1" title="">Beranda</a></li>
                     <li><a href="<?php echo app_base_url('pageadmin/kategori')?>#" accesskey="2" title="">Kategori</a></li>
                     <li><a href="<?php echo app_base_url('pageadmin/sub_kriteria')?>#" accesskey="4" title="">Sub Kriteria</a></li>
                     <li><a href="<?php echo app_base_url('pageadmin/listMember')?>#" accesskey="4" title="">Member</a></li>

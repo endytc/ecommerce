@@ -19,10 +19,10 @@ $orderList=_select_arr("select * from pesanan
                 </tr>
                 <tr>
                     <td>
-                        <li><a href="<? echo app_base_url('pagemember/order')?>">All</a> </li>
-                        <li><a href="<? echo app_base_url('pagemember/order?status=pending')?>">Pending</a> </li>
-                        <li><a href="<? echo app_base_url('pagemember/order?status=approve')?>">Approved</a> </li>
-                        <li><a href="<? echo app_base_url('pagemember/order?status=ignore')?>">Ignored</a> </li>
+                        <li><a href="<? echo app_base_url('pagemember/order')?>">Semua</a> </li>
+                        <li><a href="<? echo app_base_url('pagemember/order?status=pending')?>">Menunda</a> </li>
+                        <li><a href="<? echo app_base_url('pagemember/order?status=approve')?>">Terima</a> </li>
+                        <li><a href="<? echo app_base_url('pagemember/order?status=ignore')?>">Tolak</a> </li>
                     </td>
                 </tr>
             </table>
@@ -30,7 +30,7 @@ $orderList=_select_arr("select * from pesanan
     </ul>
 </div>
 <div id="page">
-    <h1>History Order</h1>
+    <h1>PESANAN</h1>
     <hr>
     <table class="myOtherTable">
         <thead>
