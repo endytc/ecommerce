@@ -29,6 +29,7 @@ $productList=_select_arr("select * from produk where idMember='$user[id]'")
         <tr>
             <td colspan="2" style="text-align: right">
                 <input type="button" value="Cetak" id="cetak">
+                <input type="button" value="Cetak Pdf" id="cetakpdf">
             </td>
         </tr>
     </table>
@@ -42,6 +43,12 @@ $productList=_select_arr("select * from produk where idMember='$user[id]'")
         });
         $('#cetak').click(function(){
             var wind=window.open("<?php echo app_base_url('pagemember/laporan_range_tanggal')?>?"+
+                "start="+$('input[name=tanggal_mulai]').attr('value')+"&end="+$('input[name=tanggal_akhir]').attr('value')+
+                "&idProduk="+$('#product').val(),
+                'mywindow','width=500,height‌​=350,toolbar=no,resizable=yes,menubar=yes');
+        });
+        $('#cetakpdf').click(function(){
+            var wind=window.open("<?php echo app_base_url('pagemember/laporan_range_tanggal_pdf')?>?"+
                 "start="+$('input[name=tanggal_mulai]').attr('value')+"&end="+$('input[name=tanggal_akhir]').attr('value')+
                 "&idProduk="+$('#product').val(),
                 'mywindow','width=500,height‌​=350,toolbar=no,resizable=yes,menubar=yes');
