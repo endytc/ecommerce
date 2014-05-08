@@ -67,24 +67,26 @@ border-width: 1px;
         <thead>
         <tr><td colspan="4"><hr></td></tr>
         ';
-        $jumlah=0;
-        $jumlahItem=0;
-        foreach($chartList[1] as  $id=>$produk):
-            $jumlahItem+=$produk['jumlah'];
-            $total=($produk['harga']-$produk['harga']*$produk['discount']/100)*$produk['jumlah'];
-            $jumlah+=$total;
-$output.='
-            <tr>
-                <td width="50%" style="text-align:left;width:200px;padding-right:20px">'."$produk[namaProduk]
-                </td>
-                <td style='padding-right:10px'>$produk[harga]<br>Disc. $produk[discount]</td>
-                <td style='padding-right:10px'>$produk[jumlah]</td>
-                <td style='padding-right:10px'>".$produk['jumlah']*ceil($produk['harga']-($produk['discount']/100*$produk['harga']))."</td>
-            </tr>
-            <tr><td colspan='4'><hr></td></tr>
-            ";
-        endforeach;
-        $output.="</thead>
+$jumlah=0;
+$jumlahItem=0;
+foreach($chartList as $key=>$p){
+    foreach($p as  $id=>$produk):
+        $jumlahItem+=$produk['jumlah'];
+        $total=($produk['harga']-$produk['harga']*$produk['discount']/100)*$produk['jumlah'];
+        $jumlah+=$total;
+        $output.='
+                <tr>
+                    <td width="50%" style="text-align:left;width:200px;padding-right:20px">'."$produk[namaProduk]
+                    </td>
+                    <td style='padding-right:10px'>$produk[harga]<br>Disc. $produk[discount]</td>
+                    <td style='padding-right:10px'>$produk[jumlah]</td>
+                    <td style='padding-right:10px'>".$produk['jumlah']*ceil($produk['harga']-($produk['discount']/100*$produk['harga']))."</td>
+                </tr>
+                <tr><td colspan='4'><hr></td></tr>
+                ";
+    endforeach;
+}
+$output.="</thead>
         <tfoot>
         <tr>
             <td colspan='3' style=''>Tagihan</td>
@@ -98,10 +100,10 @@ $output.='
     </table>
     </body>
     </html>";
-//echo $output;exit;
+
 require_once "app/lib/html2pdf/html2pdf.class.php";
 $html2pdf = new HTML2PDF('P', 'A4', 'en');
 $html2pdf->writeHTML($output);
 $html2pdf->Output($filename='upload/nota_pembelian_'.date('dmY-Hsi').'.pdf',"f");
 //$html2pdf->Output($filename='upload/nota_pembelian_'.date('dmY-Hsi').'.pdf');exit;
-            ?>
+?>
