@@ -66,6 +66,13 @@ border-width: 1px;
     <table class="table data-list" width="100%" style="border: 0px;width:500px" border="0" align="center">
         <thead>
         <tr><td colspan="4"><hr></td></tr>
+        <tr>
+            <td>Nama Barang</td>
+            <td>Harga</td>
+            <td>Qty</td>
+            <td>Sub Total</td>
+        </tr>
+        <tr><td colspan="4"><hr></td></tr>
         ';
 $jumlah=0;
 $jumlahItem=0;
@@ -89,7 +96,7 @@ foreach($chartList as $key=>$p){
 $output.="</thead>
         <tfoot>
         <tr>
-            <td colspan='3' style=''>Tagihan</td>
+            <td colspan='3' style=''>Total</td>
             <td>$jumlah</td>
         </tr>
         <tr>
