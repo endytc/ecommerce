@@ -1,4 +1,5 @@
 <?php
+$page=array_value($_GET, 'pages',1)* getPerPage()-getPerPage();
 $where="1";
 $kategoryName="";
 if(isset($_GET['id_sub'])){
@@ -14,7 +15,12 @@ $productList=_select_arr("select distinct produk.* from produk
     left join kategori on produk.idKategori=kategori.idKategori
     left join sub_kriteria on (sub_kriteria.idKategori=produk.idSubKriteria or sub_kriteria.idKategori=kategori.idKategori)
     where $where
-    ");
+    limit $page,
+    ".  getPerPage());
+$pagination=  pagination("select distinct produk.* from produk
+    left join kategori on produk.idKategori=kategori.idKategori
+    left join sub_kriteria on (sub_kriteria.idKategori=produk.idSubKriteria or sub_kriteria.idKategori=kategori.idKategori)
+    where $where",getPerPage());
 $kategori=_select_unique_result("select * from kategori where idKategori='$_GET[id]'");
 $SubKriteriaList=_select_arr("select * from sub_kriteria where idKategori='$_GET[id]'");
 ?>
@@ -49,4 +55,5 @@ $SubKriteriaList=_select_arr("select * from sub_kriteria where idKategori='$_GET
     <h1>Kategori <?php echo $kategoryName?></h1>
     <!-- start content -->
     <?php include "app/actions/_tampilkan_produk.php";?>
+    <?php echo $pagination?>
 </div>

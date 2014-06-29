@@ -29,8 +29,11 @@ if($_POST){
     }else{
         $_SESSION['failed']="Data galeri gagal ditambahkan";
     }
-    if(!$_POST['format']=='video')
-        unlink($filePath);
+    if($_POST['format']!='video'){
+        unlink('./'.$filePath);
+        
+    }
+    
     redirect('pagemember/produk/galeri?id='.$_GET['id']);
 }
 ?>
@@ -49,8 +52,9 @@ if($_POST){
                         <tr>
                             <td class="title">Format</td>
                             <td>
-                                <input type="radio" name="format" value="gambar"/> Gambar<br>
-                                <input type="radio" name="format" value="video"/> Video
+                                <input type="radio" name="format" value="gambar"/> Gambar   *Ukuran Gambar max 50KB <br>
+                                <input type="radio" name="format" value="video"/> Video     *Ukuran video max 200M
+
                             </td>
                         </tr>
                         <tr>

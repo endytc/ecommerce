@@ -50,7 +50,7 @@
     }
     ?>
                 </table>
-                <?php echo $pagging ?>
+<!--                <?php echo $pagging ?>!-->
             </div>
         </div>
     </div>

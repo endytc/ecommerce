@@ -4,7 +4,7 @@ if($_POST){
     if($is_success){
         $_SESSION['success']="Selemat bergabung menjadi member kami, silakan login untuk menambahkan produk anda";
         $id=_select_max_id('member',"idMember");
-        redirect('pagemember');
+        redirect('');
     }else{
         $_SESSION['failed']="Proses pendaftaran gagal dilakukan";
         redirect('daftar_member');

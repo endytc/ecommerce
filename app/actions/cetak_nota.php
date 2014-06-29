@@ -1,9 +1,10 @@
 <?php
-$output='
+
+$output = '
     <html>
     <head>
         <title>Laporan</title>
-        <link rel="stylesheet" type="text/css" href="'. app_base_url('/assets/css/base-report.css').'" media="all" />
+        <link rel="stylesheet" type="text/css" href="' . app_base_url('/assets/css/base-report.css') . '" media="all" />
         <style>
     .data-list {
         margin: 0.3em 0 0.5em;
@@ -60,57 +61,76 @@ border-width: 1px;
     <br>w2onlineshop.com
     </h1>
     <p>W2 Online Shop
-    <br>Office center: Yogyakarta, Gowok, Blok B no 87
-    <br>telp. 0274-987888 hp. 085726523455
+    <br>Office center: Yogyakarta, perumahan Jambusari Indah, jln. belimbing no.9 condong catur
+    <br>telp. 0274-987888 hp. 085750797679
     </p>
     <table class="table data-list" width="100%" style="border: 0px;width:500px" border="0" align="center">
         <thead>
         <tr><td colspan="4"><hr></td></tr>
         <tr>
             <td>Nama Barang</td>
+            <td>Jumlah</td>
             <td>Harga</td>
-            <td>Qty</td>
-            <td>Sub Total</td>
         </tr>
         <tr><td colspan="4"><hr></td></tr>
         ';
-$jumlah=0;
-$jumlahItem=0;
-foreach($chartList as $key=>$p){
-    foreach($p as  $id=>$produk):
+$jumlah = 0;
+$jumlahItem = 0;
+$totalTanpaDiskon=0;
+$subtotal=0;
+foreach ($chartList as $key => $p) {
+    foreach ($p as $id => $produk):
         $jumlahItem+=$produk['jumlah'];
-        $total=($produk['harga']-$produk['harga']*$produk['discount']/100)*$produk['jumlah'];
+        $subtotal+= ( $produk['harga'] - $produk['harga'] * $produk['discount'] / 100) * $produk['jumlah'];
+        $total = ($produk['harga'] - $produk['harga'] * $produk['discount'] / 100) * $produk['jumlah'];
         $jumlah+=$total;
+        $totalTanpaDiskon+=$produk['harga'];
         $output.='
-                <tr>
-                    <td width="50%" style="text-align:left;width:200px;padding-right:20px">'."$produk[namaProduk]
-                    </td>
-                    <td style='padding-right:10px'>$produk[harga]<br>Disc. $produk[discount]</td>
-                    <td style='padding-right:10px'>$produk[jumlah]</td>
-                    <td style='padding-right:10px'>".$produk['jumlah']*ceil($produk['harga']-($produk['discount']/100*$produk['harga']))."</td>
-                </tr>
-                <tr><td colspan='4'><hr></td></tr>
-                ";
+            <tr>
+                <td width="50%" style="text-align:left;width:200px;padding-right:10px">' . "$produk[namaProduk]</td>
+                <td style='padding-right:10px'>$produk[jumlah]</td>
+                <td style='padding-right:10px'>" . $produk['jumlah'] * $produk['harga'] . "</td>
+            </tr>
+            <tr><td colspan='4'><hr></td></tr>
+            ";
     endforeach;
 }
 $output.="</thead>
         <tfoot>
+         <tr>
+            <td colspan='2' style=''>SubTotal</td>
+            <td>$totalTanpaDiskon</td>
+        </tr>
         <tr>
-            <td colspan='3' style=''>Total</td>
+            <td colspan='2' style=''>Diskon</td>
+            <td>$produk[discount]</td>
+        </tr>
+        <tr>
+            <td colspan='2' style=''>Total</td>
             <td>$jumlah</td>
         </tr>
         <tr>
-            <td colspan='3' style=''>Jumlah Item</td>
-            <td>$jumlahItem</td>
+<td><br><br>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+        
+        <tr>
+            <td colspan='3'>Kirim ke No.Rekening Berikut</td>
         </tr>
-        </tfoot>
+        <tr>
+            <td colspan='3'>MANDIRI, 1370009777356 Atas Nama WIWINIARTI</td>
+        </tr>
+        <tr>
+             <td colspan='3'>BRI, 008901019504500 Atas Nama WIWINIARTI</td>
+        </tr>
+    </tfoot>
     </table>
     </body>
     </html>";
-
+//echo $output;exit;
 require_once "app/lib/html2pdf/html2pdf.class.php";
 $html2pdf = new HTML2PDF('P', 'A4', 'en');
 $html2pdf->writeHTML($output);
-$html2pdf->Output($filename='upload/nota_pembelian_'.date('dmY-Hsi').'.pdf',"f");
+$html2pdf->Output($filename = 'upload/nota_pembelian_' . date('dmY-Hsi') . '.pdf', "f");
 //$html2pdf->Output($filename='upload/nota_pembelian_'.date('dmY-Hsi').'.pdf');exit;
 ?>

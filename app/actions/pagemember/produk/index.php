@@ -57,7 +57,7 @@
     }
     ?>
                 </table>
-                <?php echo $pagging ?>
+               
             </div>
         </div>
     </div>

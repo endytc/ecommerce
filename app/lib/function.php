@@ -182,8 +182,7 @@ function blnAngka($bln) {
     }
     return $val;
 }
-function pagination($sql, $dataPerPage, $tab = NULL){
-             
+function pagination($sql, $dataPerPage, $tab = NULL){     
     $showPage = NULL;
     ob_start();
     echo "
@@ -206,7 +205,7 @@ function pagination($sql, $dataPerPage, $tab = NULL){
     if ($jumData > $dataPerPage) {
         if ($noPage > 1){            
             $get['pages']=($noPage - 1);
-            echo "<li><a class='page-prev' href='?" .  generate_get_parameter($get). "'> Prev </a></li>";
+            echo "<li class='page'><a class='page-prev' href='?" .  generate_get_parameter($get). "'> Prev </a></li>";
         }
         for ($page = 1; $page <= $jumPage; $page++) {
             if ((($page >= $noPage - 3) && ($page <= $noPage + 3)) || ($page == 1) || ($page == $jumPage)) {
@@ -215,7 +214,7 @@ function pagination($sql, $dataPerPage, $tab = NULL){
                 if (($showPage != ($jumPage - 1)) && ($page == $jumPage))
                     echo "...";
                 if ($page == $noPage)
-                    echo " <li class='active'><a href=#>" . $page . "</a></li> ";
+                    echo " <li class='active page'><a href=#>" . $page . "</a></li> ";
                 else{
                     $get['pages']=$page;
                     
@@ -223,7 +222,7 @@ function pagination($sql, $dataPerPage, $tab = NULL){
                         $get['tab'] = $tab;
                     }
                     
-                    echo "<li> <a class='block' href='?" .  generate_get_parameter($get). "'>" . $page . "</a> </li>";
+                    echo "<li class='page'> <a class='block' href='?" .  generate_get_parameter($get). "'>" . $page . "</a> </li>";
                 }
                 $showPage = $page;
             }
@@ -231,7 +230,7 @@ function pagination($sql, $dataPerPage, $tab = NULL){
 
         if ($noPage < $jumPage){
             $get['pages']=($noPage + 1);
-            echo "<li><a class='page-next' href='?" .  generate_get_parameter($get). "'> Next </a></li>";
+            echo "<li class='page'><a class='page-next' href='?" .  generate_get_parameter($get). "'> Next </a></li>";
         }
     }
     echo "</ul></div>";
@@ -430,7 +429,7 @@ function hitung_umur($tglLahir,$tanggalSekarang=null,$satuan=null){
     return $tahunz.$bulan." Bulan ".$hari." Hari";
 }
 function getPerPage(){
-    return 20;
+    return 12;
 }
 function split_content(){
     echo '</div>
