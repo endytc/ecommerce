@@ -1,5 +1,5 @@
 <?php
-$where="1";
+$where="stok>0";
 $page=array_value($_GET, 'pages',1)* getPerPage()-getPerPage();
 $productList=_select_arr("select distinct produk.*,(select count(*) from pesanan where pesanan.idProduk=produk.idProduk) as cout_sell from produk
     left join kategori on produk.idKategori=kategori.idKategori

@@ -1,6 +1,6 @@
 <?php
 $page=array_value($_GET, 'pages',1)* getPerPage()-getPerPage();
-$where="1";
+$where="stok>0";
 $kategoryName="";
 if(isset($_GET['id_sub'])){
     $where.=" and produk.idSubKriteria=$_GET[id_sub]";

@@ -1,3 +1,8 @@
+<style type="text/css">
+.error{
+    font-size:small;
+}
+</style>
 <?php
 $product=_select_unique_result("select * from produk
     left join member on produk.idMember=member.idMember
@@ -58,11 +63,15 @@ if(count($productGallery)>0){
         <tr>
             <td>Beli</td>
             <td>
-                <form action="<?php echo app_base_url('addProduct')?>">
+                <form action="<?php echo app_base_url('addProduct')?>" id='formbeli'>
                     <input type="hidden" name="id" value="<?php echo $product['idProduk']?>">
-                    <input type="text" name="jumlah" value="<?php ?>" placeholder="jumlah pemesanan">
-                    <button class="uibutton facebook">+ Pesan</button>
+                    <input type="text" name="jumlah" value="<?php ?>" placeholder="jumlah pemesanan" max='<?php echo $product['stok']?>'>
                 </form>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='2' style='text-align:right'>
+                <button class="uibutton facebook" onclick='$("formbelu").submit()'>+ Pesan</button>
             </td>
         </tr>
     </table>
@@ -107,6 +116,7 @@ if(count($productGallery)>0){
     $(document).ready(function(){
         $('.galery').click(function(){
            $('#displayGambar').attr('src',$(this).attr('src'));
-        })
+        });
+        $('#formbeli').validate();
     })
 </script>
