@@ -1,7 +1,7 @@
 <?php
     $page=  array_value($_GET, 'pages',1)*  getPerPage()-  getPerPage();
     $berita=  _select_arr("select * from berita where idMember=$_SESSION[id_user]");
-    $pagging= pagination("select * from berita", getPerPage());
+    $pagging= pagination("select * from berita where idMember=$_SESSION[id_user]", getPerPage());
 ?>
 <?php require_once 'app/actions/pagemember/berita/left_menu.php';?>
 <div id="page">
@@ -39,7 +39,7 @@
     }
     ?>
                 </table>
-                <?php echo $pagging ?>
+                <div style="padding-top:20px"><?php echo $pagging ?></div>               
             </div>
         </div>
     </div>

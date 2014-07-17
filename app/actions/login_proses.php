@@ -1,5 +1,5 @@
 <?php
-if($_SESSION['login']=='admin'){
+if(isset($_SESSION['login']) && $_SESSION['login']=='admin'){
     $table='admin';
 }else{
     $table='member';
@@ -21,6 +21,6 @@ if(count($userResult)>0){
     $_SESSION['failed']    ='Login gagal, user tidak ditemukan';
     redirect("page$table/index");
 }
-//show_array($userResult);exit;
+
     redirect("page$table/index");
 ?>

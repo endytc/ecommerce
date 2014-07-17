@@ -1,7 +1,9 @@
 <?php
     $page=  array_value($_GET, 'pages',1)*  getPerPage()-  getPerPage();
-    $pemasok=  _select_arr("select * from pemasok where idMember=$_SESSION[id_user]");
-    $pagging= pagination("select * from pemasok", getPerPage());
+    $pemasok=  _select_arr("select * from pemasok where idMember=$_SESSION[id_user] 
+        limit $page,
+    ".  getPerPage());
+    $pagging= pagination("select * from pemasok where idMember=$_SESSION[id_user]", getPerPage());
 ?>
 <?php require_once 'app/actions/pagemember/pemasok/left_menu.php';?>
 <div id="page">
@@ -45,7 +47,7 @@
     }
     ?>
                 </table>
-                <?php echo $pagging ?>
+                <div style="padding-top:20px">    <?php echo $pagination?></div>
             </div>
         </div>
     </div>

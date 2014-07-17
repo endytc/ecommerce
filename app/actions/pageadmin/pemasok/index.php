@@ -1,6 +1,7 @@
 <?php
     $page=  array_value($_GET, 'pages',1)*  getPerPage()-  getPerPage();
-    $pemasok=  _select_arr("select * from pemasok");
+    $pemasok=  _select_arr("select * from pemasok limit $page,
+    ".  getPerPage());
     $pagging= pagination("select * from pemasok", getPerPage());
 ?>
 <?php require_once 'app/actions/pageadmin/pemasok/left_menu.php';?>

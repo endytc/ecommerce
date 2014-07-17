@@ -1,4 +1,6 @@
 <?php
+$page=array_value($_GET, 'pages',1)* getPerPage()-getPerPage();
+
 $member=get_user_login();
 $where="1";
 if(isset($_GET['status']) && $_GET['status']!=''){
@@ -7,8 +9,14 @@ if(isset($_GET['status']) && $_GET['status']!=''){
 $orderList=_select_arr("select * from pesanan
     join produk on produk.idProduk=pesanan.idProduk
     left join pelanggan on pesanan.idPelanggan=pelanggan.idPelanggan
-        where $where and pesanan.idMember='$member[idMember]'");
+        where $where and pesanan.idMember='$member[idMember]'
+    limit $page,
+    ".  getPerPage());
 
+$pagination=  pagination("select * from pesanan
+    join produk on produk.idProduk=pesanan.idProduk
+    left join pelanggan on pesanan.idPelanggan=pelanggan.idPelanggan
+        where $where and pesanan.idMember='$member[idMember]' ",getPerPage());
 ?>
 <div id="sidebarFashion">
     <ul>
@@ -75,12 +83,6 @@ $orderList=_select_arr("select * from pesanan
             </tr>
         <?php endforeach;?>
         </thead>
-        <tfoot>
-        <tr>
-            <td colspan="9">Total</td>
-            <td><?php echo $jumlah?></td>
-        </tr>
-        </tfoot>
     </table>
-    
+<div style="padding-top:20px">    <?php echo $pagination?></div>
 </div>
