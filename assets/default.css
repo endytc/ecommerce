@@ -387,3 +387,28 @@ img { border: none; }
 .formTable{
     width: 100%;
 }
+
+/*.pagenation{
+    margin-top: 0px;
+    margin-right: 22px;
+    height: 2px;
+    padding: 2px 2px 5px 5px;
+    font-size: 18px;
+    color: white;
+}*/
+.pagination{
+    
+}
+.page{
+    display: inline;
+    background-color: #FFEA6F;
+    padding: 10px;
+    
+
+}
+
+.page.active{
+    padding: 10px;
+    background-color: #CCDDCC;
+    min-width: 31px;
+}

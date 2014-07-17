@@ -6,8 +6,9 @@ if($_POST){
     //success
     move_uploaded_file($_FILES["file"]["tmp_name"], $filePath);
     
-    $blob = fopen($filePath,'r');
-    $sql = "INSERT INTO galeri_produk (idProduk,file,keterangan,type,format) VALUES(:idProduk,:file,:keterangan,:type,:format)";
+    $blob = fopen($filePath,'r'); //baca file video yg sudah diupload
+    $sql = "INSERT INTO galeri_produk (idProduk,file,keterangan,type,format)
+        VALUES(:idProduk,:file,:keterangan,:type,:format)";
     try {
         $conn = getPDOInstance();
         $stmt = $conn->prepare($sql);
@@ -29,8 +30,11 @@ if($_POST){
     }else{
         $_SESSION['failed']="Data galeri gagal ditambahkan";
     }
-    if(!$_POST['format']=='video')
-        unlink($filePath);
+    if($_POST['format']!='video'){
+        unlink('./'.$filePath);
+        
+    }
+    
     redirect('pagemember/produk/galeri?id='.$_GET['id']);
 }
 ?>
@@ -49,8 +53,9 @@ if($_POST){
                         <tr>
                             <td class="title">Format</td>
                             <td>
-                                <input type="radio" name="format" value="gambar"/> Gambar<br>
-                                <input type="radio" name="format" value="video"/> Video
+                                <input type="radio" name="format" value="gambar"/> Gambar   *Ukuran Gambar max 50KB <br>
+                                <input type="radio" name="format" value="video"/> Video     *Ukuran video max 50M
+
                             </td>
                         </tr>
                         <tr>

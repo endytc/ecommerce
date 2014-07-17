@@ -65,7 +65,7 @@ $kategoriList=_select_arr("select * from kategori");
 
                                     </li>
                                    
-                                    <li><a href="<?php echo app_base_url() . '/berita?id=2' ?>#" accesskey="4" title="">Tentang</a></li>
+                                    <li><a href="<?php echo app_base_url() . '/About' ?>#" accesskey="4" title="">Tentang</a></li>
                                     <?php if(isset($_SESSION['chart']) && count($_SESSION['chart'])>0):?>
                                         <li><a href="<?php echo app_base_url() . '/chart' ?>" accesskey="4" title="">Chart (<?php echo count($_SESSION['chart'])?>)</a></li>
                                     <?php endif;?>
@@ -74,7 +74,7 @@ $kategoriList=_select_arr("select * from kategori");
                                             <dt id="three-ddheader" onmouseover="ddMenu('three', 1)" onmouseout="ddMenu('three', -1)"><a href="<?php echo app_base_url() . '/' ?>#" rel="dropMenu3"accesskey="5" title="">Kontak</a></dt>
                                             <dd id="three-ddcontent" onmouseover="cancelHide('three')" onmouseout="ddMenu('three', -1)">
                                                 <ul>
-                                                    <li><a target="_blank" href=http://www.facebook.com><span><img border="0" src="<?php echo app_base_url() . '/assets/' ?>images/facebook.jpg" width="30" height="30" alt="" title=""></span></a></li>
+                                                    <li><a target="_blank" href=https://www.facebook.com/wiwinniarti.as><span><img border="0" src="<?php echo app_base_url() . '/assets/' ?>images/facebook.jpg" width="30" height="30" alt="" title=""></span></a></li>
                                                     <li><a target="_blank" href=http://www.twitter.com><span><img border="0" src="<?php echo app_base_url() . '/assets/' ?>images/twitter.jpg" width="30" height="30" alt="" title=""></span></a></li>
                                                     <li><a target="_blank" href=http://www.blogspot.com><span><img border="0" src="<?php echo app_base_url() . '/assets/' ?>images/blog.jpg" width="30" height="30" alt="" title=""></span></a></li>
                                                     <li><a target="_blank" href=http://www.google.com/talk/><span><img border="0" src="<?php echo app_base_url() . '/assets/' ?>images/gtalk.gif" width="30" height="30" alt="" title=""></span></a></li>

@@ -4,7 +4,7 @@
         <li>
             <table class="myOtherTable">
                 <tr>
-                    <th>Status</th>
+                    <th>Menu</th>
                 </tr>
                 <tr>
                     <td>

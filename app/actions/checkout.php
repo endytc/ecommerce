@@ -27,7 +27,7 @@ if($_POST){
     //    show_array($chartList);
     require_once "app/actions/cetak_nota.php";
     ?>
-<script type="text/javascript">window.open('<?=app_base_url($filename)?>', 'MyWindow', 'width=600px, height=500px, scrollbars=1');</script>
+    <script>window.open('<?=app_base_url($filename)?>', 'MyWindow', 'width=600px, height=500px, scrollbars=1');</script>
     <?
     unset($_SESSION['chart']);
     if($is_success){

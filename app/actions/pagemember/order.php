@@ -82,5 +82,5 @@ $orderList=_select_arr("select * from pesanan
         </tr>
         </tfoot>
     </table>
-    <a href="<?php echo app_base_url('checkout')?>" class="uibutton confirm"> Checkout</a>
+    
 </div>
