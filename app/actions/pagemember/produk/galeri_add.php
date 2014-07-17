@@ -54,6 +54,7 @@ if($_POST){
                             <td class="title">Format</td>
                             <td>
                                 <input type="radio" name="format" value="gambar"/> Gambar   *Ukuran Gambar max 50KB <br>
+
                                 <input type="radio" name="format" value="video"/> Video     *Ukuran video max 50M
 
                             </td>

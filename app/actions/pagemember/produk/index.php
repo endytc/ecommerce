@@ -6,7 +6,7 @@
         left join sub_kriteria w on p.idSubKriteria=w.idSubkriteria
         where p.idMember=$_SESSION[id_user]
         limit $page,".  getPerPage());
-    $pagging= pagination("select * from produk", getPerPage());
+    $pagination= pagination("select * from produk where idMember=$_SESSION[id_user]", getPerPage());
 ?>
 <?php require_once 'app/actions/pagemember/produk/left_menu.php';?>
 <div id="page">
@@ -57,7 +57,7 @@
     }
     ?>
                 </table>
-               
+<div style="padding-top:20px">    <?php echo $pagination?></div>               
             </div>
         </div>
     </div>

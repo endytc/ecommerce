@@ -1,6 +1,8 @@
 <?php
-$where="1";
+
 $page=array_value($_GET, 'pages',1)* getPerPage()-getPerPage();
+$where="stok>0";
+
 $kategoryName="";
 if(isset($_GET['id_sub'])){
     $where.=" and produk.idSubKriteria=$_GET[id_sub]";
@@ -20,8 +22,7 @@ $productList=_select_arr("select distinct produk.* from produk
 $pagination=  pagination("select distinct produk.* from produk
     left join kategori on produk.idKategori=kategori.idKategori
     left join sub_kriteria on (sub_kriteria.idKategori=produk.idSubKriteria or sub_kriteria.idKategori=kategori.idKategori)
-    ", getPerPage());
-
+    where $where",getPerPage());
 $kategori=_select_unique_result("select * from kategori where idKategori='$_GET[id]'");
 $SubKriteriaList=_select_arr("select * from sub_kriteria where idKategori='$_GET[id]'");
 ?>

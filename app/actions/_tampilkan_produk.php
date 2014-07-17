@@ -17,6 +17,28 @@
         </div>
     <?php endforeach; ?>
 
-   
+    <?php
+    include_once 'pagnation.php';
+//        $result = getdata($tabel, "idHunian", $_REQUEST['id']);
+
+    if (isset($_POST['keyword'])) {
+                $condition = "where produk like '%" . $_POST['keyword'] . "%'";
+            } else {
+                $condition = null;
+            }
+            $server = "_tampilkan_produk.php?page=";
+            if (isset($_REQUEST['page'])) {
+                $batas = ($_REQUEST['page'] - 1) * 12;
+            } else {
+                $batas = 0;
+            }
+
+        $query = "select * from produk". $condition . " limit " . $batas . ",12";
+
+        $result = mysql_query($query);
+        if (mysql_num_rows($result)) {
+            while ($res = mysql_fetch_array($result)) {
+            }}
+                ?>
 
 </div>
