@@ -1,10 +1,11 @@
 <?php
     $page=  array_value($_GET, 'pages',1)*  getPerPage()-  getPerPage();
-    $pemasok=  _select_arr("select * from pemasok limit $page,
+    $pemasok=  _select_arr("select * from pemasok where idMember=$_SESSION[id_user] 
+        limit $page,
     ".  getPerPage());
-    $pagging= pagination("select * from pemasok", getPerPage());
+    $pagging= pagination("select * from pemasok where idMember=$_SESSION[id_user]", getPerPage());
 ?>
-<?php require_once 'app/actions/pageadmin/pemasok/left_menu.php';?>
+<?php require_once 'app/actions/pagemember/pemasok/left_menu.php';?>
 <div id="page">
     <div id="content fashion">
         <div class="post">
@@ -37,8 +38,8 @@
                 <td><?php echo $data['email'] ?></td>
                 <td><?php echo $data['fax'] ?></td>
                 <td class="button">
-                    <a href="<?php echo app_base_url("pageadmin/pemasok/edit?id=$data[idPemasok]") ?>" class="edit">edit</a>
-                    <a href="<?php echo app_base_url("pageadmin/pemasok/delete?id=$data[idPemasok]") ?>" onclick="return confirm('<?php echo "Apakah anda yakin akan menghapus kategori $data[nama]?" ?>')"class="hapus">hapus</a>
+                    <a href="<?php echo app_base_url("pagemember/pemasok/edit?id=$data[idPemasok]") ?>" class="edit">edit</a>
+                    <a href="<?php echo app_base_url("pagemember/pemasok/delete?id=$data[idPemasok]") ?>" onclick="return confirm('<?php echo "Apakah anda yakin akan menghapus pemasok $data[namaPemasok]?" ?>')"class="hapus">hapus</a>
                 </td>
             </tr>
         </tbody>
@@ -46,7 +47,7 @@
     }
     ?>
                 </table>
-                <?php echo $pagging ?>
+                <div style="padding-top:20px">    <?php echo $pagging ?></div>
             </div>
         </div>
     </div>

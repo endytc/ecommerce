@@ -27,6 +27,7 @@ if(count($productGallery)>0){
     <img style="width:400" src="<?php echo $b64Src?>" id="displayGambar" class="" alt="no image for <?php echo $product['namaProduk']?>"/>
 </div>
 <div class="grid_10">
+    <form action="<?php echo app_base_url('addProduct')?>" id='formbeli'>
     <table>
         <tr>
             <td>Harga</td>
@@ -63,18 +64,18 @@ if(count($productGallery)>0){
         <tr>
             <td>Beli</td>
             <td>
-                <form action="<?php echo app_base_url('addProduct')?>" id='formbeli'>
                     <input type="hidden" name="id" value="<?php echo $product['idProduk']?>">
-                    <input type="text" name="jumlah" value="<?php ?>" placeholder="jumlah pemesanan" max='<?php echo $product['stok']?>'>
-                </form>
+                    <input type="text" name="jumlah" value="<?php ?>" placeholder="jumlah pemesanan" max='<?php echo $product['stok']?>' min='1' class="required">
+                
             </td>
         </tr>
         <tr>
             <td colspan='2' style='text-align:right'>
-                <button class="uibutton facebook" onclick='$("formbelu").submit()'>+ Pesan</button>
+                <button class="uibutton facebook" onclick=''>+ Pesan</button>
             </td>
         </tr>
     </table>
+    </form>
 </div>
 <div class="clear"></div>
     <br>
