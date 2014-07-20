@@ -17,23 +17,23 @@ if($_POST){
         <div class="post">
             <h1 class="title">Tambah Pemasok</h1>
             <div class="entry">
-                <form action="<?php echo app_base_url('pagemember/pemasok/add') ?>" method="POST">
+                <form action="<?php echo app_base_url('pagemember/pemasok/add') ?>" method="POST" id="addForm">
                     <table class="myOtherTable formTable">
                         <tr>
                             <td class="title">Nama</td>
-                            <td><input type="text" name="namaPemasok" value=""/></td>
+                            <td><input type="text" name="namaPemasok" value="" class="required"/></td>
                         </tr>
                         <tr>
                             <td class="title">Alamat</td>
-                            <td><input type="text" name="alamat" value=""/></td>
+                            <td><input type="text" name="alamat" value="" class="required"/></td>
                         </tr>
                         <tr>
                             <td class="title">Telepon</td>
-                            <td><input type="text" name="telepon" value=""/></td>
+                            <td><input type="text" name="telepon" value="" class="required"/></td>
                         </tr>
                         <tr>
                             <td class="title">email</td>
-                            <td><input type="text" name="email" value=""/></td>
+                            <td><input type="text" name="email" value="" class="required email"/></td>
                         </tr>
                         <tr>
                             <td class="title">fax</td>
@@ -52,3 +52,8 @@ if($_POST){
         </div>
     </div>
 </div>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#addForm').validate();  
+});
+</script>

@@ -15,7 +15,7 @@
             <div class="login-holder">
                 <form name="login" enctype="" action="salam.php" method="post">
                     <label class="email-holder">
-                        <input name="email" placeholder="Email" type="text">
+                        <input name="email" placeholder="Email" type="text" class="email">
                     </label>
                     <input name="password" placeholder="Password" type="password">
                     <input value="Login" type="submit">

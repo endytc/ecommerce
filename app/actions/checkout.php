@@ -4,12 +4,9 @@ if($_POST){
     $idPelanggan=_select_max_id('pelanggan','idPelanggan');
     $chartList=array();
     foreach($_SESSION['chart'] as $id=>$chart){
-        $produk=_select_unique_result("select produk.*,if(kategori.namaKategori is not null,namaKategori,namaSubKriteria) as kategori,
-              member.nama as penjual,member.alamat as alamat_penjual,member.telepon as telepon_penjual
-          from produk
+        $produk=_select_unique_result("select produk.*,if(kategori.namaKategori is not null,namaKategori,namaSubKriteria) as kategori from produk
                 left join kategori on produk.idKategori=kategori.idKategori
                 left join sub_kriteria on (sub_kriteria.idKategori=produk.idSubKriteria or sub_kriteria.idKategori=kategori.idKategori)
-                left join member on member.idMember=produk.idMember
                 where idProduk='$id'");
         $produk['jumlah']=$chart;
         $chartList[$produk['idMember']][]=$produk;
@@ -19,16 +16,15 @@ if($_POST){
         foreach($chartByMember as $chart){
             
             mysql_query("insert into pesanan (`tanggalPesanan`, `jumlah`, `tanggalBayar`, `tanggalKirim`,
+<<<<<<< HEAD
+                `idProduk`, `idMember`,idPembeli) values
+=======
                 `idProduk`, `idMember`,idPelanggan) values
+>>>>>>> b91c5faa2dc3f450951005ccd98cfa5c6372bfa7
                 (now(),$chart[jumlah],NULL,NULL,$chart[idProduk],$idMember,$idPelanggan)") or die (mysql_error());
             mysql_query("update produk set stok=stok-$chart[jumlah] where idProduk='$chart[idProduk]'") or die(mysql_error());
         }
     }
-    //    show_array($chartList);
-    require_once "app/actions/cetak_nota.php";
-    ?>
-    <script>window.open('<?=app_base_url($filename)?>', 'MyWindow', 'width=600px, height=500px, scrollbars=1');</script>
-    <?
     unset($_SESSION['chart']);
     if($is_success){
         $_SESSION['success']="Pembelian berhasil dilakukan, penjual akan segera menghubungi anda";
@@ -40,29 +36,28 @@ if($_POST){
 
 }
 ?>
-
 <div id="page">
     <div id="content fashion">
         <div class="post">
             <h1 class="title">Data Pembeli</h1>
             <div class="entry">
-                <form action="<?php echo app_base_url('checkout') ?>" method="POST">
+                <form action="<?php echo app_base_url('checkout') ?>" method="POST" id='checkoutForm'>
                     <table class="myOtherTable formTable">
                         <tr>
                             <td class="title">Nama</td>
-                            <td><input type="text" name="namaPelanggan" value=""/></td>
+                            <td><input type="text" name="namaPelanggan" value="" class="required"/></td>
                         </tr>
                         <tr>
                             <td class="title">Alamat</td>
-                            <td><input type="text" name="alamat" value=""/></td>
+                            <td><input type="text" name="alamat" value="" class="required"/></td>
                         </tr>
                         <tr>
                             <td class="title">Email</td>
-                            <td><input type="text" name="email" value=""/></td>
+                            <td><input type="text" name="email" value="" class="email required"/></td>
                         </tr>
                         <tr>
                             <td class="title">Telepon</td>
-                            <td><input type="text" name="telepon" value=""/></td>
+                            <td><input type="text" name="telepon" value="" class="required"/></td>
                         </tr>
                     </table>
                     <div class="buttonpane">
@@ -117,3 +112,8 @@ if($_POST){
         </tfoot>
     </table>
 </div>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#checkoutForm').validate();  
+});
+</script>

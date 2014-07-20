@@ -16,23 +16,23 @@ $supplier=  _select_unique_result("select * from pemasok where idPemasok=$_GET[i
         <div class="post">
             <h1 class="title">Edit Supplier</h1>
             <div class="entry">
-    <form action="<?php echo app_base_url('pageadmin/pemasok/edit?id='.$_GET['id']) ?>" method="POST">
+    <form action="<?php echo app_base_url('pageadmin/pemasok/edit?id='.$_GET['id']) ?>" method="POST" id="editForm">
                     <table class="myOtherTable formTable">
                         <tr>
                             <td class="title">Nama</td>
-                            <td><input type="text" name="namaPemasok" value="<?php echo $supplier['namaPemasok']?>"/></td>
+                            <td><input type="text" name="namaPemasok" value="<?php echo $supplier['namaPemasok']?>" class="required"/></td>
                         </tr>
                         <tr>
                             <td class="title">Alamat</td>
-                            <td><input type="text" name="alamat" value="<?php echo $supplier['alamat']?>"/></td>
+                            <td><input type="text" name="alamat" value="<?php echo $supplier['alamat']?>" class="required"/></td>
                         </tr>
                         <tr>
                             <td class="title">Telepon</td>
-                            <td><input type="text" name="telepon" value="<?php echo $supplier['telepon']?>"/></td>
+                            <td><input type="text" name="telepon" value="<?php echo $supplier['telepon']?>" class="required"/></td>
                         </tr>
                         <tr>
                             <td class="title">Email</td>
-                            <td><input type="text" name="email" value="<?php echo $supplier['email']?>"/></td>
+                            <td><input type="text" name="email" value="<?php echo $supplier['email']?>" class="required email"/></td>
                         </tr>
                         <tr>
                             <td class="title">Fax</td>
@@ -50,3 +50,8 @@ $supplier=  _select_unique_result("select * from pemasok where idPemasok=$_GET[i
         </div>
     </div>
 </div>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#editForm').validate();  
+});
+</script>
