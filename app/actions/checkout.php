@@ -22,6 +22,10 @@ if($_POST){
             mysql_query("update produk set stok=stok-$chart[jumlah] where idProduk='$chart[idProduk]'") or die(mysql_error());
         }
     }
+    require_once "app/actions/cetak_nota.php";
+    ?>
+    <script>window.open('<?=app_base_url($filename)?>', 'MyWindow', 'width=600px, height=500px, scrollbars=1');</script>
+    <?
     unset($_SESSION['chart']);
     if($is_success){
         $_SESSION['success']="Pembelian berhasil dilakukan, penjual akan segera menghubungi anda";
