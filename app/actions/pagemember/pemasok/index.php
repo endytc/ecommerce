@@ -47,7 +47,7 @@
     }
     ?>
                 </table>
-                <div style="padding-top:20px">    <?php echo $pagination?></div>
+                <div style="padding-top:20px">    <?php echo $pagging?></div>
             </div>
         </div>
     </div>
