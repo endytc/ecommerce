@@ -3,6 +3,6 @@ return array(
     'host'=>'localhost',
     'dbname'=>'ecommerce',
     'user'=>'root',
-    'password'=>''
+    'password'=>'1234'
 )
 ?>
