@@ -58,7 +58,7 @@ $sub_kriteriaList= _select_arr("select * from sub_kriteria");
                         <tr>
                             <td class="title">Kategori</td>
                             <td>
-                                <select name="idKategori">
+                                <select name="idKategori" onchange="pilihKategori()">
                                     <option value="">- Pilih Kategori -</option>
                                     <?php
                                     foreach ($kategoriList as $key => $kategori) {
@@ -80,6 +80,10 @@ $sub_kriteriaList= _select_arr("select * from sub_kriteria");
                                     ?>
                                 </select>
                             </td>
+                        </tr>
+                        <tr id="luas_tanah">
+                            <td class="title">Luas Tanah</td>
+                            <td><input type="text" name="luas_tanah" value=""/> m2</td>
                         </tr>
                         <tr>
                             <td class="title">Pemasok</td>
@@ -106,3 +110,14 @@ $sub_kriteriaList= _select_arr("select * from sub_kriteria");
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function pilihKategori(){
+        if($('select[name=idKategori]').val()=='4'){
+            $('#luas_tanah').show();
+        }else{
+            $('#luas_tanah').hide();
+            $('#luas_tanah').attr('value','');
+        }
+    }
+    pilihKategori();
+</script>

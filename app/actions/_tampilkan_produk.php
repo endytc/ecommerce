@@ -10,7 +10,8 @@
 
             <div class="" style="text-align: center;"><?php echo $product['namaProduk'] ?></div>
             <div>
-                Stok: <?php echo $product['stok'] ?>
+                Stok: <?php echo $product['stok'] ?>; <?php echo rupiah($product['harga']) ?>
+                <?php echo ($product['luas_tanah']=='' || $product['luas_tanah']==null )?'':'; '.$product['luas_tanah'].' m2' ?>
                 <a href="<?php echo app_base_url('viewProduct?id=' . $product['idProduk']) ?>" type="button"
                    class="uibutton confirm">View</a>
             </div>

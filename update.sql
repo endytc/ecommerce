@@ -1,0 +1,1 @@
+ALTER TABLE  `produk` ADD  `luas_tanah` INT NOT NULL ;

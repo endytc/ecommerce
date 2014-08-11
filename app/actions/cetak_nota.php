@@ -64,9 +64,12 @@ border-width: 1px;
     <br>Office center: Yogyakarta, perumahan Jambusari Indah, jln. belimbing no.9 condong catur
     <br>telp. 0274-987888 hp. 085750797679
     </p>
+
     <table class="table data-list" width="100%" style="border: 0px;width:500px" border="0" align="center">
         <thead>
-        <tr><td colspan="4"><hr></td></tr>
+        <tr><td colspan="4" style="text-align:left">
+            No Faktur '.$nofaktur.' 
+            <hr></td></tr>
         <tr>
             <td>Nama Barang</td>
             <td>Jumlah</td>

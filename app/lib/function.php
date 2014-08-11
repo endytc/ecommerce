@@ -745,4 +745,8 @@ function playlist($videoList){
     </div>
     <?
 }
+function last_id($table,$column='id'){
+    $a=_select_unique_result("select max($column) as id from $table");
+    return $a['id'];
+}
 ?>

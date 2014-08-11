@@ -78,6 +78,10 @@ $sub_kriteriaList= _select_arr("select * from sub_kriteria");
                                 </select>
                             </td>
                         </tr>
+                        <tr id="luas_tanah">
+                            <td class="title">Luas Tanah</td>
+                            <td><input type="text" name="luas_tanah" value="<?php echo $produk['luas_tanah']?>"/> m2</td>
+                        </tr>
                         <tr>
                             <td class="title">Pemasok</td>
                             <td>
@@ -103,3 +107,14 @@ $sub_kriteriaList= _select_arr("select * from sub_kriteria");
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function pilihKategori(){
+        if($('select[name=idKategori]').val()=='4'){
+            $('#luas_tanah').show();
+        }else{
+            $('#luas_tanah').hide();
+            $('#luas_tanah').attr('value','');
+        }
+    }
+    pilihKategori();
+</script>

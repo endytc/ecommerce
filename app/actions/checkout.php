@@ -11,15 +11,15 @@ if($_POST){
         $produk['jumlah']=$chart;
         $chartList[$produk['idMember']][]=$produk;
     }
-
+    $nofaktur=999;
     foreach($chartList as $idMember=>$chartByMember){
         foreach($chartByMember as $chart){
-            
             mysql_query("insert into pesanan (`tanggalPesanan`, `jumlah`, `tanggalBayar`, `tanggalKirim`,
 
                 `idProduk`, `idMember`,idPelanggan) values
                 (now(),$chart[jumlah],NULL,NULL,$chart[idProduk],$idMember,$idPelanggan)") or die (mysql_error());
             mysql_query("update produk set stok=stok-$chart[jumlah] where idProduk='$chart[idProduk]'") or die(mysql_error());
+            $nofaktur=last_id('pesanan','idPesanan');
         }
     }
     require_once "app/actions/cetak_nota.php";

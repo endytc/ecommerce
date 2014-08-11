@@ -28,9 +28,54 @@ $kategoriList=_select_arr("select * from kategori");
                                 </div>
                             </div>
                             <div class="search-holder">
-                                <form action="<?php echo app_base_url('cari')?>">
-                                    <input type="text" name="key"> <button>Search</button>
-                                </form>
+                                <?php
+                                if(isset($_GET['type']) && $_GET['type']=='advance'){
+                                    ?>
+                                    <h1>Advance Search</h1> <hr>
+                                    <form action="<?php echo app_base_url('cari')?>">
+                                        <input type='hidden' name='type' value='advance'>
+                                        <table>
+                                            <tr>
+                                                <td>Nama Produk</td>
+                                                <td>
+                                                    <input type="text" name="key" placeholder="Nama produk" title="nama produk" value="<?php echo (isset($_GET['key'])?$_GET['key']:"")?>" style="width:110px"> 
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Harga</td>
+                                                <td>
+                                                    <input type="text" name="harga_minimum" placeholder="Harga minimum" title="harga minimum" value="<?php echo (isset($_GET['harga_minimum'])?$_GET['harga_minimum']:"")?>" style="width:110px"> s.d 
+                                                    <input type="text" name="harga_maksimum" placeholder="Harga maximum" title="harga maximum" value="<?php echo (isset($_GET['harga_maksimum'])?$_GET['harga_maksimum']:"")?>" style="width:110px">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Luas Tanah (m2)</td>
+                                                <td>
+                                                    <input type="text" name="luas_tanah_min" placeholder="Luas tanah" title="luas tanah (khusus property)" value="<?php echo (isset($_GET['luas_tanah_min'])?$_GET['luas_tanah_min']:"")?>" style="width:110px">
+                                                    s.d
+                                                    <input type="text" name="luas_tanah_max" placeholder="Luas tanah" title="luas tanah (khusus property)" value="<?php echo (isset($_GET['luas_tanah_max'])?$_GET['luas_tanah_max']:"")?>" style="width:110px">
+                                                    
+                                                    <br> <i style="font-size: 11;">*) Hanya untuk properti</i>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <button>Search</button>
+                                        <br><br><br>
+                                    </form>
+                                    <?php
+                                }else{
+                                    ?>
+                                    <form action="<?php echo app_base_url('cari')?>">
+                                        <input type="text" name="key" placeholder="Nama produk" title="nama produk" value="<?php echo (isset($_GET['key'])?$_GET['key']:"")?>" style="width:110px"> 
+                                        <button>Search</button>
+                                        <a href="<?php echo app_base_url('cari')?>?type=advance" style="background-color: #FFEA6F;
+                                            border: none;
+                                            padding: 4px;
+                                            border-radius: 5px;">Advance Search</a>
+                                    </form>
+                                    <?php
+                                }
+                            ?>
                             </div>
                             <div id="menu">
                                 <ul>
