@@ -41,7 +41,7 @@ $SubKriteriaList=_select_arr("select * from sub_kategori where idKategori='$_GET
                                 <li><a href="<?php echo "?id=$_GET[id]" ?>">All</a></li>
                                 <?php foreach ($SubKriteriaList as $sub): ?>
                                     <li>
-                                        <a href="<?php echo "?id=$_GET[id]&id_sub=$sub[idSubKategori]" ?>"><?php echo $sub['idSubKategori'] ?></a>
+                                        <a href="<?php echo "?id=$_GET[id]&id_sub=$sub[idSubKategori]" ?>"><?php echo $sub['namaSubKategori'] ?></a>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>
