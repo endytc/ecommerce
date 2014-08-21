@@ -18,9 +18,9 @@
         $jumlah=0;
 
         foreach($_SESSION['chart'] as  $id=>$cart):
-            $produk=_select_unique_result("select produk.*,if(kategori.namaKategori is not null,namaKategori,namaSubKriteria) as kategori from produk
+            $produk=_select_unique_result("select produk.*,if(kategori.namaKategori is not null,namaKategori,idSubKategori) as kategori from produk
                 left join kategori on produk.idKategori=kategori.idKategori
-                left join sub_kriteria on (sub_kriteria.idKategori=produk.idSubKriteria or sub_kriteria.idKategori=kategori.idKategori)
+                left join sub_kategori on (sub_kategori.idKategori=produk.idSubKategori or sub_kategori.idKategori=kategori.idKategori)
                 where idProduk='$id'");
             $jumlah+=$cart*ceil($produk['harga']-($produk['discount']/100*$produk['harga']));
             ?>

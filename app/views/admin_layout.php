@@ -18,7 +18,7 @@
                 <ul>
                     <li class=""><a href="<?php echo app_base_url('pageadmin/index')?>" accesskey="1" title="">Beranda</a></li>
                     <li><a href="<?php echo app_base_url('pageadmin/kategori')?>#" accesskey="2" title="">Kategori</a></li>
-                    <li><a href="<?php echo app_base_url('pageadmin/sub_kriteria')?>#" accesskey="4" title="">Sub Kriteria</a></li>
+                    <li><a href="<?php echo app_base_url('pageadmin/sub_kategori')?>#" accesskey="4" title="">Sub Kriteria</a></li>
                     <li><a href="<?php echo app_base_url('pageadmin/listMember')?>#" accesskey="4" title="">Member</a></li>
                     
                     

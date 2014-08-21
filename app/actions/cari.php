@@ -18,7 +18,7 @@ if(isset($_GET['key']) && $_GET['luas_tanah_max']!=""){
 if($where!='1'){
 $productList=_select_arr("select distinct produk.* from produk
     left join kategori on produk.idKategori=kategori.idKategori
-    left join sub_kriteria on (sub_kriteria.idKategori=produk.idSubKriteria or sub_kriteria.idKategori=kategori.idKategori)
+    left join sub_kategori on (sub_kategori.idKategori=produk.idSubKategori or sub_kategori.idKategori=kategori.idKategori)
     where $where
     ");
 }else{

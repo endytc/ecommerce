@@ -1,11 +1,11 @@
 <?php
     $page=  array_value($_GET, 'pages',1)*  getPerPage()-  getPerPage();
-    $kategori=  _select_arr("select * from sub_kriteria s
+    $kategori=  _select_arr("select * from sub_kategori s
         join kategori k on s.idKategori=k.idKategori
         limit $page,".  getPerPage());
-    $pagging= pagination("select * from sub_kriteria", getPerPage());
+    $pagging= pagination("select * from sub_kategori", getPerPage());
 ?>
-<?php require_once 'app/actions/pageadmin/sub_kriteria/left_menu.php';?>
+<?php require_once 'app/actions/pageadmin/sub_kategori/left_menu.php';?>
 <div id="page">
     <div id="content fashion">
         <div class="post">
@@ -28,12 +28,12 @@
             ?>
             <tr>
                 <td><?php echo $i++; ?></td>
-                <td><?php echo $data['idSubKriteria'] ?></td>
-                <td><?php echo $data['namaSubKriteria'] ?></td>
+                <td><?php echo $data['idSubKategori'] ?></td>
+                <td><?php echo $data['idSubKategori'] ?></td>
                 <td><?php echo $data['namaKategori'] ?></td>
                 <td class="button">
-                    <a href="<?php echo app_base_url("pageadmin/sub_kriteria/edit?id=$data[idSubKriteria]") ?>" class="edit">edit</a>
-                    <a href="<?php echo app_base_url("pageadmin/sub_kriteria/delete?id=$data[idSubKriteria]") ?>" onclick="return confirm('<?php echo "Apakah anda yakin akan menghapus kategori $data[namaSubKriteria]?" ?>')"class="hapus">hapus</a>
+                    <a href="<?php echo app_base_url("pageadmin/sub_kategori/edit?id=$data[idSubKategori]") ?>" class="edit">edit</a>
+                    <a href="<?php echo app_base_url("pageadmin/sub_kategori/delete?id=$data[idSubKategori]") ?>" onclick="return confirm('<?php echo "Apakah anda yakin akan menghapus kategori $data[idSubKategori]?" ?>')"class="hapus">hapus</a>
                 </td>
             </tr>
         </tbody>

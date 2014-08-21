@@ -15,7 +15,7 @@ if($_POST){
 $user=get_user_login();
 $kategoriList=  _select_arr("select * from kategori");
 $pemasokList=  _select_arr("select * from pemasok where idMember=$user[id]");
-$sub_kriteriaList= _select_arr("select * from sub_kriteria");
+$sub_kategoriList= _select_arr("select * from sub_kategori");
 ?>
 <?php require_once 'app/actions/pagemember/produk/left_menu.php';?>
 <div id="page">
@@ -71,11 +71,11 @@ $sub_kriteriaList= _select_arr("select * from sub_kriteria");
                         <tr>
                             <td class="title">Sub Kriteria</td>
                             <td>
-                                <select name="idSubKriteria">
+                                <select name="idSubKategori">
                                     <option value="">- Pilih Sub Kriteria -</option>
                                     <?php
-                                    foreach ($sub_kriteriaList as $key => $sub_kriteria) {
-                                        echo "<option value='$sub_kriteria[idSubKriteria]'>$sub_kriteria[namaSubKriteria]</value>";
+                                    foreach ($sub_kategoriList as $key => $sub_kategori) {
+                                        echo "<option value='$sub_kategori[idSubKategori]'>$sub_kategori[idSubKategori]</value>";
                                     }
                                     ?>
                                 </select>

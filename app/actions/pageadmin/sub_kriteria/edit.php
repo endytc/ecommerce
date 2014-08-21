@@ -1,31 +1,31 @@
 <?php
 if($_POST){
-    $is_success=_update('sub_kriteria', $_POST, 'idSubKriteria='.$_GET['id']);
+    $is_success=_update('sub_kategori', $_POST, 'idSubKategori='.$_GET['id']);
     if($is_success){
-        $_SESSION['success']="Data sub_kriteria berhasil diperbarui";
+        $_SESSION['success']="Data sub_kategori berhasil diperbarui";
     }else{
-        $_SESSION['failed']="Data sub_kriteria gagal diperbarui";
+        $_SESSION['failed']="Data sub_kategori gagal diperbarui";
     }
-    redirect('pageadmin/sub_kriteria/index');
+    redirect('pageadmin/sub_kategori/index');
 }
-$sub_kriteria=  _select_unique_result("select * from sub_kriteria where idSubKriteria=$_GET[id]");
+$sub_kategori=  _select_unique_result("select * from sub_kategori where idSubKategori=$_GET[id]");
 $kategoriList=  _select_arr("select * from kategori");
 ?>
-<?php require_once 'app/actions/pageadmin/sub_kriteria/left_menu.php';?>
+<?php require_once 'app/actions/pageadmin/sub_kategori/left_menu.php';?>
 <div id="page">
     <div id="content fashion">
         <div class="post">
             <h1 class="title">Edit Sub Kriteria</h1>
             <div class="entry">
-    <form action="<?php echo app_base_url('pageadmin/sub_kriteria/edit?id='.$_GET['id']) ?>" method="POST">
+    <form action="<?php echo app_base_url('pageadmin/sub_kategori/edit?id='.$_GET['id']) ?>" method="POST">
                     <table class="myOtherTable formTable">
                         <tr>
                             <td class="title">ID SubKriteria</td>
-                            <td><input type="text" name="idSubKriteria" value="<?php echo $sub_kriteria['idSubKriteria']?>"/></td>
+                            <td><input type="text" name="idSubKategori" value="<?php echo $sub_kategori['idSubKategori']?>"/></td>
                         </tr>
                         <tr>
                             <td class="title">Nama SubKriteria</td>
-                            <td><input type="text" name="namaSubKriteria" value="<?php echo $sub_kriteria['namaSubKriteria']?>"/></td>
+                            <td><input type="text" name="idSubKategori" value="<?php echo $sub_kategori['idSubKategori']?>"/></td>
                         </tr>
                         <tr>
                             <td class="title">Kategori</td>
@@ -34,7 +34,7 @@ $kategoriList=  _select_arr("select * from kategori");
                                     <option value="">- Pilih Kategori -</option>
                                     <?php
                                     foreach ($kategoriList as $key => $kategori) {
-                                        echo "<option value='$kategori[idKategori]' ".($kategori['idKategori']==$sub_kriteria['idKategori']?'selected':'').">$kategori[namaKategori]</value>";
+                                        echo "<option value='$kategori[idKategori]' ".($kategori['idKategori']==$sub_kategori['idKategori']?'selected':'').">$kategori[namaKategori]</value>";
                                     }
                                     ?>
                                 </select>
@@ -46,7 +46,7 @@ $kategoriList=  _select_arr("select * from kategori");
                         <span class="ButtonInput">
                             <span><input type="submit" class=""value="Simpan"/></span>
                         </span>
-                        <a href="<?php echo app_base_url('sub_kriteria/index') ?>" class="Button"><span>Batal</span></a>
+                        <a href="<?php echo app_base_url('sub_kategori/index') ?>" class="Button"><span>Batal</span></a>
                     </div>
                 </form>
                 </div>

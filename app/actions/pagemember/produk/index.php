@@ -3,7 +3,7 @@
     $produk=  _select_arr("select * from produk p
         left join pemasok s on p.idPemasok=s.idPemasok
         left join kategori k on p.idKategori=k.idKategori
-        left join sub_kriteria w on p.idSubKriteria=w.idSubkriteria
+        left join sub_kategori w on p.idSubKategori=w.idSubKategori
         where p.idMember=$_SESSION[id_user]
         limit $page,".  getPerPage());
     $pagination= pagination("select * from produk where idMember=$_SESSION[id_user]", getPerPage());
@@ -39,7 +39,7 @@
                 <td><?php echo $i++; ?></td>
                 <td><?php echo $data['namaProduk'] ?></td>
                 <td><?php echo $data['namaKategori'] ?></td>
-                <td><?php echo $data['namaSubKriteria']?></td>
+                <td><?php echo $data['idSubKategori']?></td>
                 <td><?php echo $data['harga'] ?></td>
                 <td><?php echo $data['discount'] ?></td>
                 <td><?php echo $data['warna'] ?></td>
