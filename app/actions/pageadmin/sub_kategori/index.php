@@ -29,7 +29,7 @@
             <tr>
                 <td><?php echo $i++; ?></td>
                 <td><?php echo $data['idSubKategori'] ?></td>
-                <td><?php echo $data['idSubKategori'] ?></td>
+                <td><?php echo $data['namaSubKategori'] ?></td>
                 <td><?php echo $data['namaKategori'] ?></td>
                 <td class="button">
                     <a href="<?php echo app_base_url("pageadmin/sub_kategori/edit?id=$data[idSubKategori]") ?>" class="edit">edit</a>
