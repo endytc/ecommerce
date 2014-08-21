@@ -27,6 +27,7 @@ if($_POST){
     <script>window.open('<?=app_base_url($filename)?>', 'MyWindow', 'width=600px, height=500px, scrollbars=1');</script>
     <?
     unset($_SESSION['chart']);
+    // exit;
     if($is_success){
         $_SESSION['success']="Pembelian berhasil dilakukan, penjual akan segera menghubungi anda";
         $id=_select_max_id('produk',"idProduk");

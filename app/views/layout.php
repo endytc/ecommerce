@@ -71,7 +71,8 @@ $kategoriList=_select_arr("select * from kategori");
                                         <a href="<?php echo app_base_url('cari')?>?type=advance" style="background-color: #FFEA6F;
                                             border: none;
                                             padding: 4px;
-                                            border-radius: 5px;">Advance Search</a>
+                                            border-radius: 5px;
+                                            color: #000;">Advance Search</a>
                                     </form>
                                     <?php
                                 }

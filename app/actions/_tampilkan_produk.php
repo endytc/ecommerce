@@ -4,16 +4,19 @@
                         where idProduk='$product[idProduk]' and format='gambar'");
         $b64Src = "data:" . $gambar['type'] . ";base64," . base64_encode($gambar["file"]);
         ?>
-    <div class="grid_3 " style="padding-bottom: 20px">
+    <div class="grid_3 produk" style="padding-bottom: 20px">
             <img style="width:200px;height: 150px" src="<?php echo $b64Src ?>" class="katalog"
                  alt="no image for <?php echo $product['namaProduk'] ?>"/>
 
-            <div class="" style="text-align: center;"><?php echo $product['namaProduk'] ?></div>
-            <div>
+            <div class="fb3" style="text-align: center;"><?php echo $product['namaProduk'] ?>
+           <br>
                 Stok: <?php echo $product['stok'] ?>; <?php echo rupiah($product['harga']) ?>
-                <?php echo ($product['luas_tanah']=='' || $product['luas_tanah']==null )?'':'; '.$product['luas_tanah'].' m2' ?>
+                <?php echo ($product['luas_tanah']=='' || $product['luas_tanah']<=0 || $product['luas_tanah']==null )?'':'; '.$product['luas_tanah'].' m2' ?>
+
+            </div>
+            <div style='width: 100%;text-align: center;'>
                 <a href="<?php echo app_base_url('viewProduct?id=' . $product['idProduk']) ?>" type="button"
-                   class="uibutton confirm">View</a>
+                   class="uibutton confirm" style="width: 90%;">View</a>
             </div>
         </div>
     <?php endforeach; ?>
